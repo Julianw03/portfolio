@@ -1,0 +1,12 @@
+{
+  "languages": {
+    "de": "Deutsch",
+    "en": "Englisch",
+    "choose": "Sprache wählen"
+  },
+  "themes": {
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "Systemeinstellung"
+  }
+}

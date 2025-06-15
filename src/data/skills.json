@@ -1,0 +1,107 @@
+[
+  {
+    "id": "java",
+    "name": "Java",
+    "linkUrl": "https://www.oracle.com/java/",
+    "knowledgeLevel": 4,
+    "type": "language"
+  },
+  {
+    "id": "javascript",
+    "name": "JavaScript",
+    "linkUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    "knowledgeLevel": 2,
+    "type": "language"
+  },
+  {
+    "id": "typescript",
+    "name": "TypeScript",
+    "linkUrl": "https://www.typescriptlang.org/",
+    "knowledgeLevel": 3,
+    "type": "language"
+  },
+  {
+    "id": "bash",
+    "name": "Bash",
+    "linkUrl": "https://www.gnu.org/software/bash/",
+    "knowledgeLevel": 2,
+    "type": "language"
+  },
+  {
+    "id": "spring-boot",
+    "name": "Spring Boot",
+    "linkUrl": "https://spring.io/projects/spring-boot",
+    "knowledgeLevel": 3,
+    "type": "framework"
+  },
+  {
+    "id": "react",
+    "name": "React",
+    "linkUrl": "https://reactjs.org/",
+    "knowledgeLevel": 3,
+    "type": "framework"
+  },
+  {
+    "id": "redux",
+    "name": "Redux",
+    "linkUrl": "https://redux.js.org/",
+    "knowledgeLevel": 2,
+    "type": "framework"
+  },
+  {
+    "id": "tailwindcss",
+    "name": "Tailwind CSS",
+    "linkUrl": "https://tailwindcss.com/",
+    "knowledgeLevel": 2,
+    "type": "framework"
+  },
+  {
+    "id": "maven",
+    "name": "Maven",
+    "linkUrl": "https://maven.apache.org/",
+    "knowledgeLevel": 2,
+    "type": "build"
+  },
+  {
+    "id": "gradle",
+    "name": "Gradle",
+    "linkUrl": "https://gradle.org/",
+    "knowledgeLevel": 2,
+    "type": "build"
+  },
+  {
+    "id": "git",
+    "name": "Git",
+    "linkUrl": "https://git-scm.com/",
+    "knowledgeLevel": 3,
+    "type": "version-control"
+  },
+  {
+    "id": "github",
+    "name": "GitHub",
+    "linkUrl": "https://github.com/",
+    "knowledgeLevel": 3,
+    "type": "version-control"
+  },
+  {
+    "id": "github-actions",
+    "name": "GitHub Actions",
+    "linkUrl": "https://docs.github.com/en/actions",
+    "knowledgeLevel": 2,
+    "type": "containerization"
+  },
+  {
+    "id": "docker",
+    "name": "Docker",
+    "linkUrl": "https://www.docker.com/",
+    "knowledgeLevel": 2,
+    "type": "containerization"
+  },
+  {
+    "id": "kubernetes",
+    "name": "Kubernetes",
+    "linkUrl": "https://kubernetes.io/",
+    "knowledgeLevel": 1,
+    "type": "containerization"
+  }
+]

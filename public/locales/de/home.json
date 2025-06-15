@@ -1,0 +1,11 @@
+{
+  "whoami": {
+    "description-intro": "Ich bin ein",
+    "keys": {
+      "software-engineer": "Software Ingenieur",
+      "problem-solver": "Problemlöser",
+      "team-player": "Teamplayer",
+      "continuous-learner": "Lebenslanger Lerner"
+    }
+  }
+}

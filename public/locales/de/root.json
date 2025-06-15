@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "skills": "Skills",
+    "projects": "Projekte",
+    "career": "Beruflicher Werdegang",
+    "about": "Über mich"
+  },
+  "footer": {
+    "legal": {
+      "title": "Rechtliches",
+      "imprint": "Impressum",
+      "contact": "Kontakt"
+    },
+    "links": {
+      "title": "Links"
+    }
+  }
+}

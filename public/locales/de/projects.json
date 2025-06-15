@@ -1,0 +1,50 @@
+{
+  "keys": {
+    "title": "Projekte",
+    "intro": "Hier findest du eine Übersicht meiner Projekte, an denen ich gearbeitet habe. Mit diesen Projekten möchte ich Technologien und Fähigkeiten vertiefen, die ich von meiner Arbeit kenne oder generell interessant finde.",
+    "description": "Beschreibung",
+    "githubLink": "GitHub Link",
+    "workInProgress": "In Arbeit",
+    "preview": "Vorschau",
+    "features": "Features",
+    "plannedFeatures": "Geplante Features"
+  },
+  "projects": {
+    "rcls": {
+      "description": "RLCS (Riot Client Login Screens) erlaubt es dir, eigene Login-Szenen für den Riot Client zu erstellen und dich lokal im Browser, statt im Riot Client, anzumelden. Es ist ein Open-Source-Projekt, das dir die Freiheit gibt, das Login-Erlebnis nach deinen Wünschen zu gestalten.",
+      "disclaimer": "RCLS wurde gemäß Riot Games „Rechtliches Jibber Jabber“ -Richtlinie erstellt und nutzt Gedankengut in Besitz von Riot Games.  Dieses Projekt wird weder von Riot Games unterstützt noch gesponsert.",
+      "features": {
+        "title": "Features",
+        "browserBased": "Frontend läuft in deinem Browser, egal ob Chrome, Firefox oder Edge",
+        "hCaptchaProxy": "Proxy für hCaptcha um die Anmeldung über den Browser zu ermöglichen",
+        "swaggerCodegenRiotApi": "Automatische Generierung des Riot API Clients mit Swagger Codegen",
+        "noTelemetry": "Sendet keine Telemetrie-Daten an Riot Games",
+        "easyApi": "Betriebsystemunabhängige API, die dir die volle Kontrolle über den Riot Client gibt",
+        "easyPasswordManager" : "Durch das Frontend im Browser kannst du wie gewohnt deinen Passwort-Manager verwenden: Kein nerviges Kopieren und Einfügen von Passwörtern mehr"
+      },
+      "plannedFeatures": {
+        "customLoginScreens": "Ändern von Login-Szenen",
+        "betterFrontend": "Verbessertes Frontend mit (fast) allen Features des Riot Clients"
+      }
+    },
+    "poro-client": {
+      "description": "Poro Client ist ein alternativer League of Legends Client, der in deinem Browser läuft und keine Telemetrie-Daten an Riot Games sendet. Er bietet eine benutzerfreundliche Oberfläche und ermöglicht es dir, das Spiel ohne die üblichen Einschränkungen zu genießen.",
+      "disclaimer": "Poro Client wurde gemäß Riot Games „Rechtliches Jibber Jabber“ -Richtlinie erstellt und nutzt Gedankengut in Besitz von Riot Games.  Dieses Projekt wird weder von Riot Games unterstützt noch gesponsert.",
+      "features": {
+        "browserBased": "Frontend läuft in deinem Browser, egal ob Chrome, Firefox oder Edge",
+        "customizable": "Anpassbar mit eigenem Hintergrund",
+        "lcuProxy": "Funktionsfähiger Proxy für die League Client API",
+        "noTelemetry": "Sendet keine Telemetrie-Daten an Riot Games",
+        "utilFeatures": "Nützliche Endpunkte um komplexere Logik des League Clients zu verbergen"
+      }
+    },
+    "portfolio": {
+      "description": "Mein Portfolio soll meine Fähigkeiten, meinen beruflichen Werdegang und meine Leidenschaft für Softwareentwicklung präsentieren. Du schaut es dir gerade an :)",
+      "plannedFeatures": {
+        "careerSection": "Sektion 'Beruflicher Werdegang'",
+        "aboutSection": "Sektion 'Über mich'",
+        "betterMobile": "Verbesserte (funktionierende) mobile Ansicht"
+      }
+    }
+  }
+}

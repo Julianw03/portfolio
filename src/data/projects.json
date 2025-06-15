@@ -1,0 +1,86 @@
+[
+  {
+    "id": "rcls",
+    "title": "RCLS",
+    "features": [
+      "easyApi",
+      "easyPasswordManager",
+      "hCaptchaProxy",
+      "swaggerCodegenRiotApi",
+      "browserBased",
+      "noTelemetry"
+    ],
+    "plannedFeatures": [
+      "customLoginScreens",
+      "betterFrontend"
+    ],
+    "githubLink": "https://github.com/Julianw03/RCLS",
+    "workInProgress": true,
+    "hasDisclaimer": true,
+    "skills": [
+      "java",
+      "spring-boot",
+      "gradle",
+      "react",
+      "redux",
+      "typescript",
+      "tailwindcss",
+      "git",
+      "github-actions",
+      "docker",
+      "bash"
+    ]
+  },
+  {
+    "id": "poro-client",
+    "title": "Poro Client",
+    "features": [
+      "lcuProxy",
+      "utilFeatures",
+      "customizable",
+      "noTelemetry",
+      "browserBased"
+    ],
+    "githubLink": "https://github.com/users/Julianw03/projects/2",
+    "workInProgress": true,
+    "hasDisclaimer": true,
+    "previewImages": [
+      "batchCrafting.png",
+      "batchRerolling.png",
+      "disenchant.png",
+      "loading.png",
+      "lobby.png",
+      "main.png",
+      "main2.png",
+      "profile.png",
+      "readycheck.png",
+      "tftLobby.png"
+    ],
+    "skills": [
+      "java",
+      "maven",
+      "react",
+      "typescript",
+      "redux",
+      "docker"
+    ]
+  },
+  {
+    "id": "portfolio",
+    "title": "Portfolio",
+    "githubLink": "https://github.com/users/Julianw03/portfolio",
+    "workInProgress": true,
+    "hasDisclaimer": false,
+    "features": [],
+    "plannedFeatures": [
+      "careerSection",
+      "aboutSection",
+      "betterMobile"
+    ],
+    "skills": [
+      "react",
+      "typescript",
+      "tailwindcss"
+    ]
+  }
+]

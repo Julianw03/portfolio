@@ -1,0 +1,12 @@
+{
+  "languages": {
+    "de": "German",
+    "en": "English",
+    "choose": "Choose Language"
+  },
+  "themes": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System Default"
+  }
+}
