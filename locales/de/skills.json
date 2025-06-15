@@ -1,0 +1,20 @@
+{
+  "skills": {
+    "title": "Fähigkeiten",
+    "intro": "Hier sind einige meiner verwendeten Technologien und Fähigkeiten, die ich auf meiner Arbeit und in meinen persönlichen Projekten eingesetzt habe.",
+    "category": {
+      "language": "Programmier- und Skriptsprachen",
+      "framework": "Frameworks und Bibliotheken",
+      "build": "Build und Dependency Management",
+      "version-control": "Versionierung und Zusammenarbeit",
+      "containerization": "DevOps und Containerisierung"
+    }
+  },
+  "level": {
+    "learning": "Einsteiger",
+    "competent": "Kompetent",
+    "proficient": "Fortgeschritten",
+    "advanced": "Erfahren",
+    "expert": "Experte"
+  }
+}

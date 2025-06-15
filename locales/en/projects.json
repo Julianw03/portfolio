@@ -1,0 +1,50 @@
+{
+  "keys": {
+    "title": "Projects",
+    "intro": "Hier findest du eine Übersicht meiner Projekte, an denen ich gearbeitet habe. Jedes Projekt ist ein Beweis für meine Fähigkeiten und mein Engagement in der Softwareentwicklung.",
+    "description" : "Description",
+    "githubLink": "GitHub Link",
+    "workInProgress": "Work in Progress",
+    "preview": "Preview",
+    "features": "Features",
+    "plannedFeatures": "Planned Features"
+  },
+  "projects": {
+    "rcls": {
+      "description": "RCLS (Riot Client Login Screens) allows you to create custom login scenes for the Riot Client and log in locally in your browser instead of the Riot Client. It is an open-source project that gives you the freedom to customize the login experience to your liking.",
+      "disclaimer": "RCLS was created under Riot Games' \"Legal Jibber Jabber\" policy using assets owned by Riot Games.  Riot Games does not endorse or sponsor this project.",
+      "features": {
+        "title": "Features",
+        "browserBased": "Frontend runs in your browser, whether it's Chrome, Firefox, or Edge",
+        "hCaptchaProxy": "Proxy for hCaptcha to enable login via the browser",
+        "swaggerCodegenRiotApi": "Automatic generation of the Riot API client with Swagger Codegen",
+        "noTelemetry": "Does not send telemetry data to Riot Games",
+        "easyApi": "Cross-platform API that gives you full control over the Riot Client",
+        "easyPasswordManager" : "With the frontend in the browser, you can use your password manager as usual: No more annoying copy-pasting of passwords into the Riot Client"
+      },
+      "plannedFeatures": {
+        "customLoginScreens": "Change login scenes",
+        "betterFrontend": "Improved frontend with (almost) all features of the Riot Client"
+      }
+    },
+    "poro-client": {
+      "description": "Poro Client ist ein alternativer League of Legends Client, der in deinem Browser läuft und keine Telemetrie-Daten an Riot Games sendet. Er bietet eine benutzerfreundliche Oberfläche und ermöglicht es dir, das Spiel ohne die üblichen Einschränkungen zu genießen.",
+      "disclaimer": "Poro-Client was created under Riot Games' \"Legal Jibber Jabber\" policy using assets owned by Riot Games.  Riot Games does not endorse or sponsor this project.",
+      "features": {
+        "browserBased": "Frontend runs in your browser, whether it's Chrome, Firefox, or Edge",
+        "customizable": "Customizable with your own background",
+        "lcuProxy": "Functional proxy for the League Client API",
+        "noTelemetry": "Does not send telemetry data to Riot Games",
+        "utilFeatures": "Useful endpoints to hide complex logic of the League Client"
+      }
+    },
+    "portfolio": {
+      "description": "My Portfolio showcases my skills, professional career and passion projects. You are currently viewing it :)",
+        "plannedFeatures": {
+            "careerSection": "Career section",
+            "aboutSection": "About section",
+            "betterMobile": "Improved (working) mobile view"
+        }
+    }
+  }
+}

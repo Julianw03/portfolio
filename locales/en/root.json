@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "Home",
+    "skills": "Skills",
+    "projects": "Projects",
+    "career": "Career",
+    "about": "About"
+  },
+  "footer": {
+    "legal": {
+      "title": "Legal",
+      "imprint": "Imprint",
+      "contact": "Contact"
+    },
+    "links": {
+      "title": "Links"
+    }
+  }
+}

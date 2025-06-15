@@ -1,0 +1,20 @@
+{
+  "skills": {
+    "title": "Skills",
+    "intro": "Here you can find an overview of my skills and technologies that I have mastered ",
+    "category": {
+      "language": "Script and Programming Languages",
+      "framework": "Frameworks and Libraries",
+      "build": "Build-Tools and Dependency Management",
+      "version-control": "Version Control and Collaboration",
+      "containerization": "DevOps and Containerization"
+    }
+  },
+  "level": {
+    "learning": "Learning",
+    "competent": "Competent",
+    "proficient": "Proficient",
+    "advanced": "Advanced",
+    "expert": "Expert"
+  }
+}
