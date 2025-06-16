@@ -7,8 +7,6 @@
 @import "swiper/css/pagination";
 
 @custom-variant dark (&:is(.dark *));
-@tailwind base;
-@tailwind components;
 @tailwind utilities;
 
 :root {
@@ -23,6 +21,7 @@
     overflow-x: hidden;
 
     margin: 0;
+    padding: 0;
 
     font-family: 'Poppins', sans-serif;
     line-height: 1.5;

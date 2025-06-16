@@ -147,7 +147,7 @@ const Root = () => {
                             </NavLink>
                         </div>
                         <div>
-                            <NavLink to={"mailto:woelkjulian+applications@gmail.com"} target={"_blank"}>
+                            <NavLink to={"mailto:woelkjulian+legal@gmail.com"} target={"_blank"}>
                                 <p className={"cool-underline text-lg"}>{t("footer.legal.contact", {ns: "root"})}</p>
                             </NavLink>
                         </div>
