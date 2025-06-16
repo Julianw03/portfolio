@@ -28,7 +28,7 @@
       }
     },
     "poro-client": {
-      "description": "Poro Client ist ein alternativer League of Legends Client, der in deinem Browser läuft und keine Telemetrie-Daten an Riot Games sendet. Er bietet eine benutzerfreundliche Oberfläche und ermöglicht es dir, das Spiel ohne die üblichen Einschränkungen zu genießen.",
+      "description": "Poro Client is an alternative League of Legends client that runs in your browser and does not send telemetry data to Riot Games. It provides a user-friendly interface and allows you to enjoy the game without the usual restrictions.",
       "disclaimer": "Poro-Client was created under Riot Games' \"Legal Jibber Jabber\" policy using assets owned by Riot Games.  Riot Games does not endorse or sponsor this project.",
       "features": {
         "browserBased": "Frontend runs in your browser, whether it's Chrome, Firefox, or Edge",
