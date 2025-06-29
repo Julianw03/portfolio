@@ -43,13 +43,12 @@ export default function Collapsible(
 
     return (
         <div className={className ?? ""}>
-            <div className={"collapsibleHeaderSection"}>
+            <div className={"collapsibleHeaderSection"} onClick={toggleCollapsed}>
                 <div className={"collapsibleHeaderContent"}>
                     {header}
                 </div>
                 <div className={"collapsibleHeaderCollapseControl"}>
                     <svg
-                        onClick={toggleCollapsed}
                         role={"button"}
                         aria-label={"Toggle collapsible content"}
                         aria-description={collapsed ? "Expand" : "Collapse"}

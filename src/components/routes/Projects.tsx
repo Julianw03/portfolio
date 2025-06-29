@@ -94,7 +94,7 @@ const renderFeatures = (project: Project, t: TFunction) => {
             <h3 className={"text-lg mb-2"}>
                 {t(`keys.features`)}
             </h3>
-            <ul className={"list-disc pl-4"}>
+            <ul className={"list-disc pl-8 lg:pl-4"}>
                 {features.map((feature) => {
                     return (
                         <li key={feature}>
@@ -131,7 +131,7 @@ const renderPlannedFeatures = (project: Project, t: TFunction) => {
             <h3 className={"text-lg mb-2"}>
                 {t("keys.plannedFeatures")}
             </h3>
-            <ul className={"list-disc pl-4"}>
+            <ul className={"list-disc pl-8 lg:pl-4"}>
                 {plannedFeatures.map((feature) => {
                     return (
                         <li key={feature}>
@@ -151,7 +151,7 @@ const Projects = () => {
 
     return (
         <div className={"w-full"}>
-            <div className={"mx-4 my-4"}>
+            <div className={"mx-6 my-4 lg:mx-[20%] lg:my-6"}>
                 <h1 className={"text-3xl mb-4"}>
                     {t("keys.title")}
                 </h1>
@@ -176,7 +176,7 @@ const Projects = () => {
                                     </div>
                                 }
                             >
-                                <div className={"mb-4"}>
+                                <div className={"mb-4"} >
                                     {t(`projects.${project.id}.description`)}
                                 </div>
                                 <div>
@@ -184,7 +184,7 @@ const Projects = () => {
                                         renderDisclaimer(project as Project, t)
                                     }
                                 </div>
-                                <div>
+                                <div className={"mb-4"}>
                                     {
                                         renderFeatures(project as Project, t)
                                     }
@@ -192,7 +192,7 @@ const Projects = () => {
                                 <div className={"mb-4"}>
                                     {renderPlannedFeatures(project as Project, t)}
                                 </div>
-                                <div className={"mb-4"}>
+                                <div className={"mb-6"}>
                                     {renderImages(project as Project)}
                                 </div>
                                 <div className={"mb-4"}>
