@@ -29,7 +29,7 @@ export const SkillDisplay = ({ skillName, skillPoints, maxSkillPoints }: SkillDi
     const segments = Array.from({ length: maxSkillPoints });
 
     return (
-        <div className={"w-3/5 h-full flex flex-col items-center justify-center"}>
+        <div className={"w-4/5 h-full flex flex-col items-center justify-center"}>
             <div>
                 {skillName}
             </div>

@@ -34,14 +34,14 @@ const Skills = () => {
                                                 </h2>
                                             }>
                                             <div
-                                                className={"flex flex-col flex-nowrap md:flex-row md:flex-wrap  h-full w-full items-center justify-start"}>
+                                                className={"flex flex-col flex-nowrap lg:flex-row lg:flex-wrap h-full w-full items-center justify-start"}>
                                                 {skills
                                                     // Reverse order
                                                     .sort((b, a) => a.knowledgeLevel - b.knowledgeLevel)
                                                     .map((skill: Skill) => {
                                                         return (
                                                             <div
-                                                                className={"flex flex-row items-center justify-start md:w-1/2 w-full gap-2"}
+                                                                className={"flex flex-row items-center justify-start lg:w-1/2 w-full gap-2"}
                                                                 key={skill.id}>
                                                                 <GenericLogo
                                                                     logoId={skill.id}

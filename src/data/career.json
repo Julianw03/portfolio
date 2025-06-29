@@ -1,4 +1,27 @@
-{
-  "education": [],
-  "experience": []
-}
+[
+  {
+    "id": "tu-dortmund-student",
+    "position": "student",
+    "company": "Technische Universität Dortmund",
+    "companyLogoId": "tu-dortmund",
+    "linkUrl": "https://www.tu-dortmund.de/",
+    "startDate": "2021-09-01",
+    "endDate": null,
+    "responsibilities": [
+      "studying-computer-science"
+    ]
+  },
+  {
+    "id": "bab-technologie-working-student",
+    "position": "working-student",
+    "company": "BAB Technologie GmbH",
+    "companyLogoId": "bab-technologie",
+    "linkUrl" : "https://bab-technologie.com/",
+    "startDate": "2022-08-01",
+    "endDate": null,
+    "responsibilities": [
+      "middleware-development",
+      "visualization-elements"
+    ]
+  }
+]

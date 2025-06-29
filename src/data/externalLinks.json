@@ -8,5 +8,10 @@
     "id": "linked-in",
     "name": "LinkedIn",
     "url": "https://www.linkedin.com/in/julian-woelk/"
+  },
+  {
+    "id": "email",
+    "name": "Email",
+    "url": "mailto:woelkjulian+applications@gmail.com"
   }
 ]

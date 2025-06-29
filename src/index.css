@@ -121,7 +121,8 @@
 
         stroke: var(--primary);
 
-        transition: all 0.25s ease-in-out;
+        transition: transform 0.25s ease-in-out,
+        scale 0.25s ease-in-out;
         transform: rotate(90deg);
     }
 
@@ -203,7 +204,8 @@
         height: var(--size);
         transform: scale3d(0, 1, 1);
         transform-origin: bottom right;
-        transition: transform 0.25s ease-in-out;
+        transition: transform 0.25s ease-in-out,
+                    background-color 0.25s linear;
         width: 100%;
         left: 0;
         background-color: var(--primary);
@@ -222,8 +224,12 @@
     }
 
     @keyframes fadeIn {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
 
     .svg-fill {
@@ -239,7 +245,8 @@
         width: 75%;
     }
 
-    .external-link {}
+    .external-link {
+    }
 
     .external-link:after {
         content: "↗";
@@ -310,6 +317,12 @@
         content: "";
         @apply absolute top-0 w-1 bg-primary;
         height: 50%;
+    }
+
+    .timeline-entry:only-child .timeline-dot-wrapper::before {
+        content: "";
+        @apply absolute top-0 w-1 bg-primary;
+        height: 0;
     }
 
     .timeline-dot .active {
@@ -390,8 +403,32 @@
 }
 
 @layer base {
+
+    /*
+        We deliberately apply this specific transition to all elements to allow for a smooth theme change.
+        If we were to use tailwinds "duration" or similar that would cause all other transition properties to also be
+        overridden. (So a component that e.g. has a duration of 10ms would now have a duration of 250ms)
+
+        TODO: This might not be very performant?
+    */
     * {
         @apply border-border outline-ring/50;
+        transition:
+                background-color 0.25s linear,
+                color 0.25s linear,
+                fill 0.25s linear,
+                border-color 0.25s linear,
+                box-shadow 0.25s linear;
+    }
+
+    *::before,
+    *::after {
+        transition:
+                background-color 0.25s linear,
+                color 0.25s linear,
+                fill 0.25s linear,
+                border-color 0.25s linear,
+                box-shadow 0.25s linear;
     }
 
     body {

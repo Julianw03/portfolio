@@ -6,8 +6,8 @@ export type ProjectMediaLink = LocalLink & {__type: "ProjectMediaLink"};
 export interface Project {
     id: ID<Project>
     title: string;
-    features: LanguageKey<"features">[];
-    plannedFeatures?: LanguageKey<"features">[];
+    features: LanguageKey<unknown>[];
+    plannedFeatures?: LanguageKey<unknown>[];
     skills?: ID<Skill>[];
     workInProgress?: boolean;
     hasDisclaimer?: boolean;

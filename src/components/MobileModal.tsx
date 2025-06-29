@@ -1,25 +1,12 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {useTranslation} from "react-i18next";
-
-const checkMobile = () => {
-    if (typeof window === "undefined") {
-        return false;
-    }
-
-    return window.innerWidth <= 768 && window.innerHeight <= 1024;
-}
+import {Breakpoint, isCssBreakpointOrUp} from "@/hooks/useCssBreakpointOrUp.tsx";
 
 const MobileModal = () => {
 
     const { t } = useTranslation("mobile");
 
-    const [showModal, setShowModal] = useState(false);
-
-    useEffect(() => {
-        if (checkMobile()) {
-            setShowModal(true);
-        }
-    }, []);
+    const [showModal, setShowModal] = useState(() => !isCssBreakpointOrUp(Breakpoint.LG));
 
     if (!showModal) return null;
 
