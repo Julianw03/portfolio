@@ -94,7 +94,7 @@ const renderFeatures = (project: Project, t: TFunction) => {
             <h3 className={"text-lg mb-2"}>
                 {t(`keys.features`)}
             </h3>
-            <ul className={"list-disc pl-8 lg:pl-4"}>
+            <ul className={"list-disc pl-8"}>
                 {features.map((feature) => {
                     return (
                         <li key={feature}>
@@ -131,7 +131,7 @@ const renderPlannedFeatures = (project: Project, t: TFunction) => {
             <h3 className={"text-lg mb-2"}>
                 {t("keys.plannedFeatures")}
             </h3>
-            <ul className={"list-disc pl-8 lg:pl-4"}>
+            <ul className={"list-disc pl-8"}>
                 {plannedFeatures.map((feature) => {
                     return (
                         <li key={feature}>
