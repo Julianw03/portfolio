@@ -13,7 +13,7 @@ const Skills = () => {
 
     return (
         <div className={"w-full"}>
-            <div className={"mx-4 my-4"}>
+            <div className={"mx-6 my-4 lg:mx-[20%] lg:my-6"}>
                 <h1 className={"text-3xl mb-4"}>
                     {t("skills.title")}
                 </h1>

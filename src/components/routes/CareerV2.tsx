@@ -8,8 +8,8 @@ const CareerV2 = () => {
     const isLgUp = useCssBreakpointOrUp(Breakpoint.LG);
 
     return (
-        <div className={"w-full h-full flex items-center justify-center relative my-6"}>
-            <div className="w-19/20 flex flex-col items-center justify-end gap-0  border-box">
+        <div className={"w-full h-full flex items-center justify-center relative"}>
+            <div className="w-full flex flex-col items-center justify-end gap-0  border-box mx-6 my-4 lg:mx-[15%] lg:my-6">
                 {
                     [...career]
                         .reverse()

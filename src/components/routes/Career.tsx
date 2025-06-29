@@ -20,7 +20,7 @@ const renderExamples = (count: number) => {
 const Career = () => {
     return (
         <div className={"w-full h-full flex items-center justify-center relative my-6"}>
-            <div className="w-19/20 flex flex-col items-center justify-end gap-0  border-box">
+            <div className="w-19/20 flex flex-col items-center justify-end gap-0 border-box">
                 {renderExamples(10)}
             </div>
         </div>

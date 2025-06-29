@@ -39,7 +39,7 @@ export const SkillDisplay = ({ skillName, skillPoints, maxSkillPoints }: SkillDi
                     return (
                         <div
                             key={i}
-                            className={`h-full flex-1 ${isFilled ? 'bg-primary' : 'bg-secondary'}`}
+                            className={`h-full flex-1 ${isFilled ? 'bg-primary' : 'bg-muted'}`}
                             style={{
                                 clipPath: i === 0
                                     ? 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)' // start segment
