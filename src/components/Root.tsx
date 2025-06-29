@@ -20,10 +20,14 @@ import {
 } from "@/components/ui/sheet.tsx";
 import ThemeSelector from "@/components/common/ThemeSelector.tsx";
 import LanguageSelector from "@/components/common/LanguageSelector.tsx";
+import useTheme from "@/hooks/useTheme.tsx";
 
 
 const Root = () => {
     const {t} = useTranslation(["common", "root"]);
+
+    // Force theme load
+    useTheme();
 
     const navigation = useNavigation();
     const isNavigating = Boolean(navigation.location);
@@ -77,7 +81,7 @@ const Root = () => {
                                 <SheetDescription className={"pl-4"}>
                                     {HEADER_LINKS.map((link) => (
                                         <div key={link.to} className="my-2">
-                                            <p className={"w-fit text-xl"}>
+                                            <div className={"w-fit text-xl"}>
                                                 <SheetClose asChild>
                                                     {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                                                     {/*@ts-expect-error*/}
@@ -86,7 +90,7 @@ const Root = () => {
                                                            tabIndex={0}>{t(link.label, {ns: "root"})}</p>
                                                     </NavLink>
                                                 </SheetClose>
-                                            </p>
+                                            </div>
                                         </div>
                                     ))}
                                 </SheetDescription>
