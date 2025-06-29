@@ -10,7 +10,7 @@ export interface Logo {
 }
 
 export interface GenericLogoProps {
-    logoId: ID<unknown>,
+    logoId: ID<unknown> | null | undefined,
     className?: string,
     onClick?: () => void,
 }

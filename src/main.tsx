@@ -10,6 +10,7 @@ import Skills from "@/components/routes/Skills.tsx";
 import UnderConstruction from "@/components/routes/UnderConstruction.tsx";
 import Imprint from "@/components/Imprint.tsx";
 import Projects from "@/components/routes/Projects.tsx";
+import CareerV2 from "@/components/routes/CareerV2.tsx";
 
 const router = createHashRouter([
     {
@@ -31,7 +32,7 @@ const router = createHashRouter([
             },
             {
                 path: "/career",
-                Component: UnderConstruction
+                Component: CareerV2
             },
             {
                 path:  "/about",

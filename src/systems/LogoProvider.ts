@@ -1,21 +1,24 @@
 import type {Logo} from "@/components/logos/GenericLogo.tsx";
-import BashLogo from "@/components/logos/BashLogo.tsx";
-import JavaLogo from "@/components/logos/JavaLogo.tsx";
-import GitLogo from "@/components/logos/GitLogo.tsx";
-import GithubActionsLogo from "@/components/logos/GithubActionsLogo.tsx";
-import GithubLogo from "@/components/logos/GithubLogo.tsx";
-import GradleLogo from "@/components/logos/GradleLogo.tsx";
-import MavenLogo from "@/components/logos/MavenLogo.tsx";
-import ReactLogo from "@/components/logos/ReactLogo.tsx";
-import ReduxLogo from "@/components/logos/ReduxLogo.tsx";
-import TailwindCssLogo from "@/components/logos/TailwindCssLogo.tsx";
-import SpringBootLogo from "@/components/logos/SpringBootLogo.tsx";
-import TypescriptLogo from "@/components/logos/TypescriptLogo.tsx";
-import JavascriptLogo from "@/components/logos/JavascriptLogo.tsx";
-import KubernetesLogo from "@/components/logos/KubernetesLogo.tsx";
-import LinkedInLogo from "@/components/logos/LinkedInLogo.tsx";
+import BashLogo from "@/components/logos/skills/BashLogo.tsx";
+import JavaLogo from "@/components/logos/skills/JavaLogo.tsx";
+import GitLogo from "@/components/logos/skills/GitLogo.tsx";
+import GithubActionsLogo from "@/components/logos/skills/GithubActionsLogo.tsx";
+import GithubLogo from "@/components/logos/skills/GithubLogo.tsx";
+import GradleLogo from "@/components/logos/skills/GradleLogo.tsx";
+import MavenLogo from "@/components/logos/skills/MavenLogo.tsx";
+import ReactLogo from "@/components/logos/skills/ReactLogo.tsx";
+import ReduxLogo from "@/components/logos/skills/ReduxLogo.tsx";
+import TailwindCssLogo from "@/components/logos/skills/TailwindCssLogo.tsx";
+import SpringBootLogo from "@/components/logos/skills/SpringBootLogo.tsx";
+import TypescriptLogo from "@/components/logos/skills/TypescriptLogo.tsx";
+import JavascriptLogo from "@/components/logos/skills/JavascriptLogo.tsx";
+import KubernetesLogo from "@/components/logos/skills/KubernetesLogo.tsx";
+import LinkedInLogo from "@/components/logos/skills/LinkedInLogo.tsx";
 import type {ID} from "@/types/Shared.ts";
-import DockerLogo from "@/components/logos/DockerLogo.tsx";
+import DockerLogo from "@/components/logos/skills/DockerLogo.tsx";
+import BABTechnologieLogo from "@/components/logos/work/BABTechnologieLogo.tsx";
+import EmailIcon from "@/components/logos/generic/EmailLogo.tsx";
+import TUDortmundLogo from "@/components/logos/work/TUDortmundLogo.tsx";
 
 export class LogoProvider {
     private static instance: LogoProvider;
@@ -59,9 +62,14 @@ export class LogoProvider {
 
         this.register("github", GithubLogo)
         this.register("linked-in", LinkedInLogo);
+
+        this.register("email", EmailIcon)
+
+        this.register("tu-dortmund", TUDortmundLogo);
+        this.register("bab-technologie", BABTechnologieLogo)
     }
 
-    public getLogo: (id: ID<unknown>) => Logo | undefined = (id) => {
-        return this.map.get(id);
+    public getLogo: (id: ID<unknown> | null | undefined) => Logo | undefined = (id) => {
+        return this.map.get(id ?? "");
     }
 }

@@ -1,0 +1,13 @@
+{
+  "entries" :{
+    "tu-dortmund-student": {
+      "position": "Student Bachelor Computer Science",
+      "responsibilities": {}
+    },
+    "bab-technologie-working-student": {
+      "position": "Working Student Software Development",
+      "responsibilities": {}
+    }
+  },
+  "dateToday": "today"
+}

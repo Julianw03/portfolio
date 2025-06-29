@@ -19,6 +19,9 @@ const CareerItem = (
 
     return (
         <div className={cn("timeline-entry", containerClass)}>
+            <div className={"flex-1 h-full"}>
+
+            </div>
             <div className="timeline-dot-wrapper relative">
                 { active ? <div className={"timeline-dot animate-ping absolute"}/> : null }
                 <div className="timeline-dot absolute"/>

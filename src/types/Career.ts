@@ -1,21 +1,11 @@
-import type {ISO8601Date, LanguageKey} from "@/types/Shared.ts";
+import type {ExternalLink, ID, ISO8601Date, LanguageKey} from "@/types/Shared.ts";
 
-
-export interface Education {
-    facility?: LanguageKey<"Facility">;
-    additional?: LanguageKey<"Additional">[];
-}
-
-export interface Experience {
-    position: LanguageKey<"Position">
+export interface CareerDataEntry {
+    id: ID<CareerDataEntry>;
     company: string;
-    startData: ISO8601Date
-    endDate?: ISO8601Date
-    responsibilities: LanguageKey<"Responsibilities">[];
-}
-
-
-export interface Career {
-    edcucation: Education[];
-    experience: Experience[];
+    companyLogoId: ID<unknown> | null
+    linkUrl?: ExternalLink | null
+    startDate: ISO8601Date
+    endDate?: ISO8601Date | null
+    responsibilities: LanguageKey<unknown>[];
 }

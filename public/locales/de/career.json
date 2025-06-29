@@ -1,0 +1,16 @@
+{
+  "entries" :{
+    "tu-dortmund-student": {
+      "position": "Student Bachelor Informatik",
+      "responsibilities": {}
+    },
+    "bab-technologie-working-student": {
+      "position": "Werkstudent Softwareentwicklung",
+      "responsibilities": {
+        "middleware-development": "Konzeption und Entwicklung diverser bidirektionaler Middleware-Komponenten zur Kommunikation zwischen externen Systemen und dem KNX-Bus-System.",
+        "visualization-elements": "Konzeption und Entwicklung von Visualisierungselementen zur Darstellung von aktuellen KNX-Werten in verschiedenen Darstellungsformen."
+      }
+    }
+  },
+  "dateToday": "heute"
+}
