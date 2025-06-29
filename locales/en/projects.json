@@ -41,9 +41,9 @@
     "portfolio": {
       "description": "My Portfolio showcases my skills, professional career and passion projects. You are currently viewing it :)",
         "plannedFeatures": {
-            "careerSection": "Career section",
+            "careerSection": "More detailed Career section",
             "aboutSection": "About section",
-            "betterMobile": "Improved (working) mobile view"
+            "betterMobile": "Improved mobile view"
         }
     }
   }
