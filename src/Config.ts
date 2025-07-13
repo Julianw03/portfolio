@@ -13,8 +13,8 @@ export interface SimpleLink {
 
 export const HEADER_LINKS: SimpleLink[] = [
     {to: "/", label: "nav.home"},
-    {to: "/career", label: "nav.career"},
     {to: "/skills", label: "nav.skills"},
+    {to: "/career", label: "nav.career"},
     {to: "/projects", label: "nav.projects"},
     // TODO
     // {to: "/about", label: "nav.about"},

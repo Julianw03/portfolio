@@ -2,11 +2,16 @@
   "entries" :{
     "tu-dortmund-student": {
       "position": "Student Bachelor Computer Science",
-      "responsibilities": {}
+      "responsibilities": {
+        "studying-computer-science": "Minor in Electrical Engineering"
+      }
     },
     "bab-technologie-working-student": {
       "position": "Working Student Software Development",
-      "responsibilities": {}
+      "responsibilities": {
+        "middleware-development": "Design and development of various bidirectional middleware components for communication between external systems and the KNX bus system.",
+        "visualization-elements": "Design and development of visualization elements to display current KNX values in various formats."
+      }
     }
   },
   "dateToday": "today"
