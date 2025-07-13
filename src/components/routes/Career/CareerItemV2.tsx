@@ -132,7 +132,7 @@ const CareerItemV2 = (
 
     if (mobileBreakpointReached) {
         return (
-            <div className={"timeline-entry grid-cols-[0fr_1fr]"}>
+            <div className={"timeline-entry grid-cols-[0fr_minmax(0,_1fr)] grid"}>
                 {
                     renderTimelineDot(active)
                 }
