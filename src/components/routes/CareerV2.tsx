@@ -9,7 +9,7 @@ const CareerV2 = () => {
 
     return (
         <div className={"w-full h-full flex items-center justify-center relative"}>
-            <div className="w-full flex flex-col items-center justify-end gap-0  border-box mx-6 my-4 lg:mx-[15%] lg:my-6">
+            <div className="w-full flex h-fit flex-col items-center justify-end gap-0  border-box mx-6 my-4 lg:mx-[15%] lg:my-6">
                 {
                     [...career]
                         .reverse()
@@ -19,7 +19,6 @@ const CareerV2 = () => {
                                           display={(index % 2 === 1) ? "left" : "right"}
                                           active={careerData.endDate === null}
                                           mobileBreakpointReached={!isLgUp}
-                                          containerClass={"h-36"}
                             />
                         )
                     )

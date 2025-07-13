@@ -1,5 +1,5 @@
 import type {Project} from "@/types/Project.ts";
-import Collapsible from "@/components/Collapsible.tsx";
+import Collapsible, {ClickListenerLocation} from "@/components/Collapsible.tsx";
 import {useTranslation} from "react-i18next";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Keyboard, Zoom, Pagination} from "swiper/modules";
@@ -166,6 +166,7 @@ const Projects = () => {
                                 key={project.id}
                                 initialCollapsed={index > 0}
                                 className={"w-full"}
+                                clickListenerLocation={ClickListenerLocation.WHOLE_HEADER}
                                 header={
                                     <div className={"mb-2"}>
                                         <a className={cn("text-2xl", project.githubLink ? "external-link" : "")}

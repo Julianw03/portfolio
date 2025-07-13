@@ -4,9 +4,9 @@ import GenericLogo from "@/components/logos/GenericLogo.tsx";
 import {useTranslation} from "react-i18next";
 import type {TFunction} from "i18next";
 import type {JSX} from "react";
+import Collapsible, {ClickListenerLocation} from "@/components/Collapsible.tsx";
 
 export interface CareerItemV2Props {
-    containerClass?: string
     careerData: CareerDataEntry
     active?: boolean
     display?: "left" | "right"
@@ -57,7 +57,6 @@ const renderDescription = (data: CareerDataEntry, t: TFunction) => {
 
 // TODO
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const renderResponsibilities = (data: CareerDataEntry, t: TFunction) => {
 
@@ -66,7 +65,7 @@ const renderResponsibilities = (data: CareerDataEntry, t: TFunction) => {
     }
 
     return (
-        <ul className={"list-disc pl-4"}>
+        <ul className={"list-disc pl-8 select-text"}>
             {
                 data.responsibilities.map((responsibility, index) => {
                     return (
@@ -80,9 +79,51 @@ const renderResponsibilities = (data: CareerDataEntry, t: TFunction) => {
     )
 }
 
+const renderContent = (careerData: CareerDataEntry, t: TFunction) => {
+
+    const startDate = new Date(careerData.startDate);
+    const endDate = careerData.endDate ? new Date(careerData.endDate) : null;
+
+    return (
+        <Collapsible
+            bottomBorder={false}
+            className={"w-full"}
+            clickListenerLocation={ClickListenerLocation.WHOLE_HEADER}
+            header={
+                <div className={"h-32 w-full flex flex-row"}>
+                    {
+                        renderLogo(careerData)
+                    }
+                    <div className={"flex-1 w-full px-4 py-2 overflow-hidden flex items-center justify-start"}>
+                        <div className={"flex flex-col h-fit"}>
+                            {
+                                renderDescription(careerData, t)
+                            }
+                            <p className={"text-sm text-primary"}>
+                                {
+                                    careerData.company
+                                }
+                            </p>
+                            <p className={"text-sm text-secondary-foreground"}>
+                                {
+                                    renderDateRange(startDate, endDate, t)
+                                }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }>
+            <div className={cn("px-4 flex flex-col gap-4")}>
+                {
+                    renderResponsibilities(careerData, t)
+                }
+            </div>
+        </Collapsible>
+    )
+}
+
 const CareerItemV2 = (
     {
-        containerClass,
         careerData,
         active = false,
         display = "left",
@@ -92,40 +133,16 @@ const CareerItemV2 = (
 
     const {t} = useTranslation("career");
 
-    const startDate = new Date(careerData.startDate);
-    const endDate = careerData.endDate ? new Date(careerData.endDate) : null;
-
     if (mobileBreakpointReached) {
         return (
-            <div className={cn("timeline-entry", containerClass)}>
+            <div className={"timeline-entry grid-cols-[0fr_1fr]"}>
                 {
                     renderTimelineDot(active)
                 }
-                <div className="flex-1 h-full">
-                    <div className={"h-full w-full flex items-center justify-center py-4"}>
-                        <div className={"h-full w-full border-rounded-lg border-2 border-secondary flex flex-row"}>
-                            {
-                                renderLogo(careerData)
-                            }
-                            <div className={"flex-1 bg-secondary w-full h-full px-4 py-2 overflow-hidden"}>
-                                <div className={"flex flex-col h-full"}>
-                                    {
-                                        renderDescription(careerData, t)
-                                    }
-                                    <p className={"text-sm text-secondary-foreground"}>
-                                        {
-                                            careerData.company
-                                        }
-                                    </p>
-                                    <p className={"text-sm text-secondary-foreground"}>
-                                        {
-                                            renderDateRange(startDate, endDate, t)
-                                        }
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div className={"h-full w-full flex items-center justify-center py-4 bg-secondary"}>
+                    {
+                        renderContent(careerData, t)
+                    }
                 </div>
             </div>
         )
@@ -133,69 +150,30 @@ const CareerItemV2 = (
 
     if (display === "left") {
         return (
-            <div className={cn("timeline-entry", containerClass)}>
-                <div className={"flex-1 h-full"}>
-                    <div className={"h-full w-full flex items-center justify-center py-4"}>
-                        <div
-                            className={"h-full w-full border-rounded-lg border-2 border-secondary flex flex-row-reverse"}>
-                            {
-                                renderLogo(careerData)
-                            }
-                            <div className={"flex-1 bg-secondary w-full h-full px-4 py-2 overflow-hidden"}>
-                                <div className={"flex flex-col h-full"}>
-                                    {
-                                        renderDescription(careerData, t)
-                                    }
-                                    <p className={"text-sm text-secondary-foreground"}>
-                                        {
-                                            careerData.company
-                                        }
-                                    </p>
-                                    <p className={"text-sm text-secondary-foreground"}>
-                                        {
-                                            renderDateRange(startDate, endDate, t)
-                                        }
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div className={"timeline-entry"}>
+                <div className={"h-full w-full flex items-center justify-center py-4 border-rounded-lg bg-secondary"}>
+                    {
+                        renderContent(careerData, t)
+                    }
                 </div>
-                {renderTimelineDot(active)}
-                <div className="flex-1 h-full"/>
+                {
+                    renderTimelineDot(active)
+                }
+                <div/>
             </div>
         )
     }
 
     return (
-        <div className={cn("timeline-entry", containerClass)}>
-            <div className="flex-1 h-full"/>
-            {renderTimelineDot(active)}
-            <div className={"flex-1 h-full"}>
-                <div className={"h-full w-full flex items-center justify-center py-4"}>
-                    <div className={"h-full w-full border-rounded-lg border-2 border-secondary flex flex-row"}>
-                        {
-                            renderLogo(careerData)
-                        }
-                        <div className={"flex-1 bg-secondary w-full px-4 py-2 overflow-hidden"}>
-                            <div className={"flex flex-col h-full"}>
-                                {
-                                    renderDescription(careerData, t)
-                                }
-                                <p className={"text-sm text-primary"}>
-                                    {
-                                        careerData.company
-                                    }
-                                </p>
-                                <p className={"text-sm text-secondary-foreground"}>
-                                    {
-                                        renderDateRange(startDate, endDate, t)
-                                    }
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div className={"timeline-entry"}>
+            <div/>
+            {
+                renderTimelineDot(active)
+            }
+            <div className={"h-full w-full flex items-center justify-center py-4 border-rounded-lg bg-secondary"}>
+                {
+                    renderContent(careerData, t)
+                }
             </div>
         </div>
     )

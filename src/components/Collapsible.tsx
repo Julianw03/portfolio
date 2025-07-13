@@ -4,11 +4,19 @@ import {cn} from "@/lib/utils.ts";
 export interface CollapsibleProps {
     injectedHooks?: [collapsed: boolean, setCollapsed: Dispatch<SetStateAction<boolean>>];
     header: React.ReactNode;
+    clickListenerLocation?: ClickListenerLocation;
     children: React.ReactNode;
     className?: string;
     initialCollapsed?: boolean;
     bottomBorder?: boolean;
 }
+
+export const ClickListenerLocation = {
+    WHOLE_HEADER: "wholeHeader",
+    COLLAPSE_ICON: "collapseIcon"
+} as const;
+
+export type ClickListenerLocation = typeof ClickListenerLocation[keyof typeof ClickListenerLocation];
 
 
 const DEFAULT_COLLAPSED = true;
@@ -18,13 +26,14 @@ export default function Collapsible(
     {
         injectedHooks,
         header,
+        clickListenerLocation = ClickListenerLocation.COLLAPSE_ICON,
         children,
         className,
         initialCollapsed,
         bottomBorder
     }: CollapsibleProps) {
-    const [internalCollapsed, setInternalCollapsed] = useState(initialCollapsed ?? DEFAULT_COLLAPSED);
-    const [showBottomBorder] = useState(bottomBorder ?? DEFAULT_BOTTOM_BORDER);
+    const [internalCollapsed, setInternalCollapsed] = useState((initialCollapsed === undefined) ? DEFAULT_COLLAPSED : initialCollapsed);
+    const [showBottomBorder] = useState((bottomBorder === undefined) ? DEFAULT_BOTTOM_BORDER : bottomBorder);
 
     const collapsed = injectedHooks ? injectedHooks[0] : internalCollapsed;
     const setCollapsed = injectedHooks ? injectedHooks[1] : setInternalCollapsed;
@@ -43,7 +52,12 @@ export default function Collapsible(
 
     return (
         <div className={className ?? ""}>
-            <div className={"collapsibleHeaderSection"} onClick={toggleCollapsed}>
+            <div className={"collapsibleHeaderSection"}
+                 onClick={() => {
+                     if (clickListenerLocation === ClickListenerLocation.WHOLE_HEADER) {
+                         toggleCollapsed();
+                     }
+                 }}>
                 <div className={"collapsibleHeaderContent"}>
                     {header}
                 </div>
@@ -52,6 +66,11 @@ export default function Collapsible(
                         role={"button"}
                         aria-label={"Toggle collapsible content"}
                         aria-description={collapsed ? "Expand" : "Collapse"}
+                        onClick={() => {
+                            if (clickListenerLocation === ClickListenerLocation.COLLAPSE_ICON) {
+                                toggleCollapsed();
+                            }
+                        }}
                         tabIndex={0}
                         onKeyDown={handleKeyDown}
                         className={

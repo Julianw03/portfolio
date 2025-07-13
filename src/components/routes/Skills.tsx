@@ -2,7 +2,7 @@ import {groupBy} from "@/lib/utils.ts";
 import type {Skill, SkillType} from "@/types/Skill.ts";
 import {useTranslation} from "react-i18next";
 import GenericLogo from "@/components/logos/GenericLogo.tsx";
-import Collapsible from "@/components/Collapsible.tsx";
+import Collapsible, {ClickListenerLocation} from "@/components/Collapsible.tsx";
 import skills from "@/data/skills.json";
 import {SkillDisplay} from "@/components/SkillDisplay.tsx";
 
@@ -28,6 +28,7 @@ const Skills = () => {
                                     <div key={skillType} className={"text-xl w-full"}>
                                         <Collapsible
                                             initialCollapsed={ skillType !== ("language" as SkillType)}
+                                            clickListenerLocation={ClickListenerLocation.WHOLE_HEADER}
                                             header={
                                                 <h2>
                                                     {t(`skills.category.${skillType}`)}

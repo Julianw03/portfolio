@@ -289,7 +289,7 @@
 
 @layer components {
     .timeline-entry {
-        @apply w-full flex flex-row items-center justify-center relative overflow-hidden;
+        @apply w-full grid flex-row items-center justify-center grid-cols-[1fr_0fr_1fr] h-fit overflow-hidden;
     }
 
     .timeline-dot-wrapper {
