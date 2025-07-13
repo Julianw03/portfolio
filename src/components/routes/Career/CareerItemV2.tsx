@@ -55,9 +55,6 @@ const renderDescription = (data: CareerDataEntry, t: TFunction) => {
     )
 }
 
-// TODO
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const renderResponsibilities = (data: CareerDataEntry, t: TFunction) => {
 
     if (!data.responsibilities || data.responsibilities.length === 0) {
@@ -90,11 +87,11 @@ const renderContent = (careerData: CareerDataEntry, t: TFunction) => {
             className={"w-full"}
             clickListenerLocation={ClickListenerLocation.WHOLE_HEADER}
             header={
-                <div className={"h-32 w-full flex flex-row"}>
+                <div className={"h-28 w-full flex flex-row"}>
                     {
                         renderLogo(careerData)
                     }
-                    <div className={"flex-1 w-full px-4 py-2 overflow-hidden flex items-center justify-start"}>
+                    <div className={"flex-1 w-full px-4 py-2 overflow-hidden flex items-center justify-start select-text"}>
                         <div className={"flex flex-col h-fit"}>
                             {
                                 renderDescription(careerData, t)
@@ -139,7 +136,7 @@ const CareerItemV2 = (
                 {
                     renderTimelineDot(active)
                 }
-                <div className={"h-full w-full flex items-center justify-center py-4 bg-secondary"}>
+                <div className={"h-full w-full flex items-center justify-center bg-secondary mb-4"}>
                     {
                         renderContent(careerData, t)
                     }
@@ -151,7 +148,7 @@ const CareerItemV2 = (
     if (display === "left") {
         return (
             <div className={"timeline-entry"}>
-                <div className={"h-full w-full flex items-center justify-center py-4 border-rounded-lg bg-secondary"}>
+                <div className={"h-full w-full flex items-center justify-center pb-4 border-rounded-lg bg-secondary"}>
                     {
                         renderContent(careerData, t)
                     }
@@ -170,7 +167,7 @@ const CareerItemV2 = (
             {
                 renderTimelineDot(active)
             }
-            <div className={"h-full w-full flex items-center justify-center py-4 border-rounded-lg bg-secondary"}>
+            <div className={"h-full w-full flex items-center justify-center pb-4 border-rounded-lg bg-secondary"}>
                 {
                     renderContent(careerData, t)
                 }

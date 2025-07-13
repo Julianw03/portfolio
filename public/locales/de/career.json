@@ -2,7 +2,9 @@
   "entries" :{
     "tu-dortmund-student": {
       "position": "Student Bachelor Informatik",
-      "responsibilities": {}
+      "responsibilities": {
+        "studying-computer-science": "Nebenfach Elektrotechnik"
+      }
     },
     "bab-technologie-working-student": {
       "position": "Werkstudent Softwareentwicklung",
