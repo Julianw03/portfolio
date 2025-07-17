@@ -11,8 +11,8 @@
     }
   },
   "level": {
-    "learning": "Learning",
-    "competent": "Competent",
+    "learning": "Beginner",
+    "competent": "Intermediate",
     "proficient": "Proficient",
     "advanced": "Advanced",
     "expert": "Expert"

@@ -6,6 +6,7 @@ import {LogoProvider} from "@/systems/LogoProvider.ts";
 
 export interface Logo {
     getBrandColor: () => string;
+    getTitle: () => string;
     renderComponent: () => ReactNode;
 }
 
@@ -29,12 +30,14 @@ const GenericLogo = (
     }
 
     const brandColor = logo.getBrandColor();
+    const title = logo.getTitle();
 
     return (
         <div
             onClick={props.onClick}
             className={cn(props.className, "flex", "items-center", "justify-center", "aspect-square", "border-solid", "box-border")}
             style={{borderColor: `${brandColor}`}}
+            title={title}
             draggable={false}
         >
             {logo.renderComponent()}

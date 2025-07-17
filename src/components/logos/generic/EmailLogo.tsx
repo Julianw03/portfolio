@@ -6,8 +6,13 @@ const getBrandColor = () => {
     return brandColor;
 }
 
+const getTitle = () => {
+    return "E-Mail";
+}
+
 const EmailLogo: Logo = {
     getBrandColor,
+    getTitle,
     renderComponent: () => {
         return (
             <svg fill={getBrandColor()} className={"svg-logo"} role={"img"} version="1.1"

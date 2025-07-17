@@ -6,8 +6,13 @@ const getBrandColor = () => {
     return brandColor;
 }
 
+const getTitle = () => {
+    return "React";
+}
+
 const ReactLogo: Logo = {
     getBrandColor,
+    getTitle,
     renderComponent: () => {
         return (
             <svg role={"img"}

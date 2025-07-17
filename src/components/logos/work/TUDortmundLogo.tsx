@@ -8,8 +8,13 @@ const getBrandColor = () => {
     return brandColor;
 }
 
+const getTitle = () => {
+    return "Technische Universität Dortmund";
+}
+
 const TUDortmundLogo: Logo = {
     getBrandColor,
+    getTitle,
     renderComponent: () => {
         return (
             <svg className={"svg-icon w-4/5 h-4/5"} role={"img"}

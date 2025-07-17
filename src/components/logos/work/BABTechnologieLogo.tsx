@@ -6,8 +6,13 @@ const getBrandColor = () => {
     return brandColor;
 }
 
+const getTitle = () => {
+    return "BAB Technologie";
+}
+
 const BABTechnologieLogo: Logo = {
     getBrandColor,
+    getTitle,
     renderComponent: () => {
         return (
             <svg role={"img"} xmlns="http://www.w3.org/2000/svg"

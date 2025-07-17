@@ -6,8 +6,13 @@ const getBrandColor = () => {
     return brandColor;
 }
 
+const getTitle = () => {
+    return "Typescript";
+}
+
 const TypescriptLogo: Logo = {
     getBrandColor,
+    getTitle,
     renderComponent: () => {
         return (
             <svg className={"svg-logo h-3/5 w-3/5"} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

@@ -6,8 +6,13 @@ const getBrandColor = () => {
     return brandColor;
 }
 
+const getTitle = () => {
+    return "LinkedIn";
+}
+
 const LinkedInLogo: Logo = {
     getBrandColor,
+    getTitle,
     renderComponent: () => {
         return (
             <svg className={"svg-logo"} role="img" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">

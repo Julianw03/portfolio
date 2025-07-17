@@ -6,8 +6,13 @@ const getBrandColor = () => {
     return brandColor;
 }
 
+const getTitle = () => {
+    return "Gradle";
+}
+
 const GradleLogo: Logo = {
     getBrandColor,
+    getTitle,
     renderComponent: () => {
         return (
             <svg className={"svg-logo"} role={"img"} xmlns="http://www.w3.org/2000/svg"
