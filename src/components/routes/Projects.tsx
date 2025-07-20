@@ -2,7 +2,7 @@ import type {Project} from "@/types/Project.ts";
 import Collapsible, {ClickListenerLocation} from "@/components/Collapsible.tsx";
 import {useTranslation} from "react-i18next";
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Keyboard, Zoom, Pagination, Navigation} from "swiper/modules";
+import {Keyboard, Pagination, Navigation} from "swiper/modules";
 import {cn} from "@/lib/utils.ts";
 import projects from "@/data/projects.json";
 import type {Skill} from "@/types/Skill.ts";
