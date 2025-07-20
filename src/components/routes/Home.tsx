@@ -11,13 +11,13 @@ const Home = () => {
 
     return (
         <>
-            <div className={"w-full h-[calc(100dvh-80px)] w-full flex items-center justify-center relative"}>
+            <div className={"w-full h-[calc(100dvh-80px)] flex items-center justify-center relative"}>
                 <div className={"h-full w-full absolute translate-y-1/4"}>
-                    <Threads key={"threads"} amplitude={0.5} distance={0}/>
+                    <Threads amplitude={0.5} distance={0}/>
                 </div>
-                <div className={"h-full w-full flex items-center justify-center z-1 pointer-events-none"}>
-                    <div className={"flex flex-col items-center justify-center"}>
-                        <p className={"text-xl text-center max-w-md"}>
+                <div className={"h-full w-full flex flex-col items-center justify-center z-1"}>
+                    <div className={"flex flex-col items-center justify-center h-fit absolute"}>
+                        <p className={"text-xl text-center max-w-md h-fit"}>
                             {
                                 t("whoami.description-intro")
                             }

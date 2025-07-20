@@ -6,14 +6,14 @@ import externalLinks from "@/data/externalLinks.json"
 import GenericLogo from "@/components/logos/GenericLogo.tsx";
 import type {ID} from "@/types/Shared.ts";
 import MobileModal from "@/components/MobileModal.tsx";
-import {HEADER_LINKS} from "@/Config.ts";
+import * as Config from "@/Config.ts";
 
 
 import {
     Sheet,
     SheetClose,
     SheetContent,
-    SheetDescription, SheetFooter,
+    SheetFooter,
     SheetHeader,
     SheetTitle,
     SheetTrigger
@@ -40,18 +40,17 @@ const Root = () => {
         <>
             <header className={"w-full fixed grid z-10 top-0 bg-primary-foreground overflow-hidden text-primary"}>
                 <div className={"flex h-[80px] w-full"}>
-                    <div className={"ml-4 flex justify-center items-center h-full aspect-square hidden lg:flex"}>
-                        {/* Replace with logo */}
-                        {/*<NavLink to={"/"} className={"overflow-hidden flex justify-center items-center h-3/5 w-3/5"}*/}
-                        {/*         tabIndex={-1}>*/}
-                        {/*    <img className={"object-cover object-center"}*/}
-                        {/*         src={"https://picsum.photos/300/300"}*/}
-                        {/*    />*/}
-                        {/*</NavLink>*/}
-                    </div>
+                    {/*<div className={"ml-4 justify-center items-center h-full aspect-square hidden lg:flex"}>*/}
+                    {/*    <NavLink to={"/"} className={"overflow-hidden flex justify-center items-center h-3/5 w-3/5"}*/}
+                    {/*             tabIndex={-1}>*/}
+                    {/*        <img className={"object-cover object-center"}*/}
+                    {/*             src={"https://picsum.photos/300/300"}*/}
+                    {/*        />*/}
+                    {/*    </NavLink>*/}
+                    {/*</div>*/}
                     <div className={"w-full h-full box-border pl-5 hidden lg:flex"}>
                         {
-                            HEADER_LINKS.map((link) => {
+                            Config.HEADER_LINKS.map((link) => {
                                 return (
                                     <div key={link.to} className={"inline-flex h-full"}>
                                         <div className={"static px-4 flex justify-center items-center"}>
@@ -78,22 +77,21 @@ const Root = () => {
                                         {t("nav.title", {ns: "root"})}
                                     </SheetTitle>
                                 </SheetHeader>
-                                <SheetDescription className={"pl-4"}>
-                                    {HEADER_LINKS.map((link) => (
-                                        <div key={link.to} className="my-2">
-                                            <div className={"w-fit text-xl"}>
-                                                <SheetClose asChild>
-                                                    {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                                                    {/*@ts-expect-error*/}
-                                                    <NavLink to={link.to} tabIndex={-1} onClick={handleNavLinkClick}>
-                                                        <p className={cn(!isNavigating && "cool-underline", "transition-all")}
-                                                           tabIndex={0}>{t(link.label, {ns: "root"})}</p>
-                                                    </NavLink>
-                                                </SheetClose>
-                                            </div>
+                                {Config.HEADER_LINKS.map((link) => (
+                                    <div key={link.to} className="pl-4">
+                                        <div className={"w-fit text-xl"}>
+                                            <SheetClose asChild>
+                                                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                                                {/*@ts-expect-error*/}
+                                                <NavLink to={link.to} tabIndex={-1} onClick={handleNavLinkClick}>
+                                                        <span
+                                                            className={cn(!isNavigating && "cool-underline", "transition-all")}
+                                                            tabIndex={0}>{t(link.label, {ns: "root"})}</span>
+                                                </NavLink>
+                                            </SheetClose>
                                         </div>
-                                    ))}
-                                </SheetDescription>
+                                    </div>
+                                ))}
                                 <SheetFooter className={"flex flex-row items-center justify-between"}>
                                     <ThemeSelector className={"w-min-1/5 mx-2 flex-1 flex justify-center"}/>
                                     <LanguageSelector className={"w-min-1/5 mx-2 flex-1 flex justify-center"}/>
@@ -124,7 +122,7 @@ const Root = () => {
                             </NavLink>
                         </div>
                         <div>
-                            <NavLink to={"mailto:woelkjulian+legal@gmail.com"} target={"_blank"}>
+                            <NavLink to={`mailto:${Config.EMAIL_ADDRESS_LEGAL}`} target={"_blank"}>
                                 <p className={"cool-underline text-lg"}>{t("footer.legal.contact", {ns: "root"})}</p>
                             </NavLink>
                         </div>

@@ -19,6 +19,7 @@ import DockerLogo from "@/components/logos/skills/DockerLogo.tsx";
 import BABTechnologieLogo from "@/components/logos/work/BABTechnologieLogo.tsx";
 import EmailIcon from "@/components/logos/generic/EmailLogo.tsx";
 import TUDortmundLogo from "@/components/logos/work/TUDortmundLogo.tsx";
+import CppLogo from "@/components/logos/skills/CppLogo.tsx";
 
 export class LogoProvider {
     private static instance: LogoProvider;
@@ -41,6 +42,7 @@ export class LogoProvider {
     private constructor() {
         this.map = new Map<string, Logo>();
 
+        this.register("c++", CppLogo)
         this.register("bash", BashLogo);
         this.register("java", JavaLogo);
         this.register("typescript", TypescriptLogo);

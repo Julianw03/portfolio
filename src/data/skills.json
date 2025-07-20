@@ -28,6 +28,13 @@
     "type": "language"
   },
   {
+    "id": "c++",
+    "name": "C++",
+    "linkUrl": "https://isocpp.org/",
+    "knowledgeLevel": 1,
+    "type": "language"
+  },
+  {
     "id": "spring-boot",
     "name": "Spring Boot",
     "linkUrl": "https://spring.io/projects/spring-boot",

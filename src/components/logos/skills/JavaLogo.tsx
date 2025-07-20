@@ -6,8 +6,13 @@ const getBrandColor = () => {
     return brandColor;
 }
 
+const getTitle = () => {
+    return "Java";
+}
+
 const JavaLogo: Logo = {
     getBrandColor,
+    getTitle,
     renderComponent: () => {
         return (
             <svg preserveAspectRatio="xMidYMid" viewBox="0 0 256 346" className={"svg-logo h-3/4 w-3/4"}

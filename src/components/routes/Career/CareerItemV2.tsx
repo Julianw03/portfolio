@@ -39,7 +39,7 @@ const renderDateRange = (startDate: Date, endDate: Date | null, t: TFunction) =>
 const renderLogo = (careerData: CareerDataEntry) => {
     return (
         <div
-            className={"flex-shrink-0 aspect-square h-full overflow-hidden flex items-center justify-center"}>
+            className={"flex-shrink-0 aspect-square lg:h-full h-4/5 overflow-hidden flex items-center justify-center"}>
             <a href={careerData.linkUrl ?? ""} className={"h-full w-full"} target="_blank" rel="noopener noreferrer">
                 <GenericLogo logoId={careerData.companyLogoId ?? undefined}/>
             </a>
@@ -87,11 +87,11 @@ const renderContent = (careerData: CareerDataEntry, t: TFunction) => {
             className={"w-full"}
             clickListenerLocation={ClickListenerLocation.WHOLE_HEADER}
             header={
-                <div className={"h-28 w-full flex flex-row"}>
+                <div className={"h-28 w-full flex flex-row items-center"}>
                     {
                         renderLogo(careerData)
                     }
-                    <div className={"flex-1 w-full px-4 py-2 overflow-hidden flex items-center justify-start select-text"}>
+                    <div className={"flex-1 w-full lg:px-4 pl-2 py-2 overflow-hidden flex items-center justify-start select-text"}>
                         <div className={"flex flex-col h-fit"}>
                             {
                                 renderDescription(careerData, t)
@@ -110,7 +110,7 @@ const renderContent = (careerData: CareerDataEntry, t: TFunction) => {
                     </div>
                 </div>
             }>
-            <div className={cn("px-4 flex flex-col gap-4")}>
+            <div className={cn("px-4 flex flex-col gap-4 mt-2")}>
                 {
                     renderResponsibilities(careerData, t)
                 }
@@ -132,7 +132,7 @@ const CareerItemV2 = (
 
     if (mobileBreakpointReached) {
         return (
-            <div className={"timeline-entry grid-cols-[0fr_1fr]"}>
+            <div className={"timeline-entry grid-cols-[0fr_minmax(0,_1fr)] grid"}>
                 {
                     renderTimelineDot(active)
                 }

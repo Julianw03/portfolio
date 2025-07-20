@@ -6,8 +6,13 @@ const getBrandColor = () => {
     return brandColor;
 }
 
+const getTitle = () => {
+    return "Git";
+}
+
 const GitLogo: Logo = {
     getBrandColor,
+    getTitle,
     renderComponent: () => {
         return (
             <svg role="img" className={"svg-logo"} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

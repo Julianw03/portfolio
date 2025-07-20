@@ -6,8 +6,13 @@ const getBrandColor = () => {
     return brandColor;
 }
 
+const getTitle = () => {
+    return "Redux";
+}
+
 const ReduxLogo: Logo = {
     getBrandColor,
+    getTitle,
     renderComponent: () => {
         return (
             <svg role="img" className={"svg-logo"} viewBox="0 0 24 27 " xmlns="http://www.w3.org/2000/svg">
