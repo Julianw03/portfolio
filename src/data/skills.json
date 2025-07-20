@@ -29,7 +29,7 @@
   },
   {
     "id": "c++",
-    "Name": "C++",
+    "name": "C++",
     "linkUrl": "https://isocpp.org/",
     "knowledgeLevel": 1,
     "type": "language"
