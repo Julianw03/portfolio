@@ -7,7 +7,6 @@ import './i18n';
 import Home from "@/components/routes/Home.tsx";
 import NotFound from "@/components/routes/NotFound.tsx";
 import Skills from "@/components/routes/Skills.tsx";
-import UnderConstruction from "@/components/routes/UnderConstruction.tsx";
 import Imprint from "@/components/Imprint.tsx";
 import Projects from "@/components/routes/Projects.tsx";
 import CareerV2 from "@/components/routes/CareerV2.tsx";
@@ -34,10 +33,10 @@ const router = createHashRouter([
                 path: "/career",
                 Component: CareerV2
             },
-            {
-                path:  "/about",
-                Component: UnderConstruction
-            }
+            // {
+            //     path:  "/about",
+            //     Component: About
+            // }
         ]
     },
     {

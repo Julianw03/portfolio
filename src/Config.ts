@@ -1,7 +1,5 @@
 import type {LanguageKey} from "@/types/Shared.ts";
 
-export const COMPONENT_LOADER_MINIMUM_LOAD_TIME = 250;
-
 export const EMAIL_ADDRESS_APPLICATIONS = "woelkjulian+applications@gmail.com";
 export const EMAIL_ADDRESS_LEGAL = "woelkjulian+legal@gmail.com";
 
@@ -16,8 +14,7 @@ export const HEADER_LINKS: SimpleLink[] = [
     {to: "/skills", label: "nav.skills"},
     {to: "/career", label: "nav.career"},
     {to: "/projects", label: "nav.projects"},
-    // TODO
-    // {to: "/about", label: "nav.about"},
+    // {to: "/about", label: "nav.about"}
 ];
 
 export interface SupportedLanguage {
