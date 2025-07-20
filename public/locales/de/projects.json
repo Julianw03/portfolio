@@ -41,7 +41,6 @@
     "portfolio": {
       "description": "Mein Portfolio soll meine Fähigkeiten, meinen beruflichen Werdegang und meine Leidenschaft für Softwareentwicklung präsentieren. Du schaut es dir gerade an :)",
       "plannedFeatures": {
-        "careerSection": "Detailiertere Sektion 'Beruflicher Werdegang'",
         "aboutSection": "Sektion 'Über mich'",
         "betterMobile": "Verbesserte mobile Ansicht"
       }

@@ -73,14 +73,14 @@
     "hasDisclaimer": false,
     "features": [],
     "plannedFeatures": [
-      "careerSection",
       "aboutSection",
       "betterMobile"
     ],
     "skills": [
       "react",
       "typescript",
-      "tailwindcss"
+      "tailwindcss",
+      "github-actions"
     ]
   }
 ]

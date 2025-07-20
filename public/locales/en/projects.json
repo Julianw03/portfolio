@@ -1,7 +1,7 @@
 {
   "keys": {
     "title": "Projects",
-    "into": "Here you can find an overview of my projects that I have worked on. With these projects, I want to deepen my understanding of technologies and skills that I know from my work or find generally interesting.",
+    "intro": "Here you can find an overview of my projects that I have worked on. With these projects, I want to deepen my understanding of technologies and skills that I know from my work or find generally interesting.",
     "description" : "Description",
     "githubLink": "GitHub Link",
     "workInProgress": "Work in Progress",
@@ -41,7 +41,6 @@
     "portfolio": {
       "description": "My Portfolio showcases my skills, professional career and passion projects. You are currently viewing it :)",
         "plannedFeatures": {
-            "careerSection": "More detailed Career section",
             "aboutSection": "About section",
             "betterMobile": "Improved mobile view"
         }
