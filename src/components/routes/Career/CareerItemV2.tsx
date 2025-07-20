@@ -110,7 +110,7 @@ const renderContent = (careerData: CareerDataEntry, t: TFunction) => {
                     </div>
                 </div>
             }>
-            <div className={cn("px-4 flex flex-col gap-4")}>
+            <div className={cn("px-4 flex flex-col gap-4 mt-2")}>
                 {
                     renderResponsibilities(careerData, t)
                 }

@@ -21,7 +21,7 @@ const TextRotation = ({
     }, [texts.length, duration]);
 
     return (
-        <div className={"w-100 mt-6 h-content relative flex justify-center items-center text-2xl"}>
+        <div className={"w-100 mt-6 mb-4 h-4 relative flex justify-center items-center text-2xl"}>
             <AnimatePresence>
                 <motion.div
                     key={currentTextIndex}
