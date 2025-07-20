@@ -1,6 +1,7 @@
 import type {ReactNode} from "react";
 import {cn} from "@/lib/utils.ts";
 import type {ID} from "@/types/Shared.ts";
+import {Tooltip, TooltipTrigger, TooltipContent} from "@/components/ui/tooltip.tsx";
 import {LogoProvider} from "@/systems/LogoProvider.ts";
 
 
@@ -13,35 +14,58 @@ export interface Logo {
 export interface GenericLogoProps {
     logoId: ID<unknown> | null | undefined,
     className?: string,
+    showTooltip?: boolean,
     onClick?: () => void,
 }
 
 const provider = LogoProvider.getInstance();
 
 const GenericLogo = (
-    props: GenericLogoProps
+    {
+        logoId,
+        className,
+        showTooltip = false,
+        onClick = () => {
+        },
+    }: GenericLogoProps
 ) => {
 
-    const logo = provider.getLogo(props.logoId);
+    const logo = provider.getLogo(logoId);
 
     if (!logo) {
-        console.warn(`Logo with ID ${props.logoId} not found.`);
+        console.warn(`Logo with ID ${logoId} not found.`);
         return <></>
     }
 
     const brandColor = logo.getBrandColor();
     const title = logo.getTitle();
 
-    return (
+    const content = (
         <div
-            onClick={props.onClick}
-            className={cn(props.className, "flex", "items-center", "justify-center", "aspect-square", "border-solid", "box-border")}
+            onClick={onClick}
+            className={cn(className, "flex", "items-center", "justify-center", "aspect-square", "border-solid", "box-border")}
             style={{borderColor: `${brandColor}`}}
-            title={title}
             draggable={false}
         >
             {logo.renderComponent()}
         </div>
+    );
+
+    if (!showTooltip) {
+        return content;
+    }
+
+    return (
+        <Tooltip delayDuration={150}>
+            <TooltipTrigger>
+                {
+                    content
+                }
+            </TooltipTrigger>
+            <TooltipContent>
+                <p className={"my-1"}>{title}</p>
+            </TooltipContent>
+        </Tooltip>
     )
 }
 

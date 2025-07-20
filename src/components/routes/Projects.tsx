@@ -68,7 +68,7 @@ const renderSkills = (technologies: ID<Skill>[]) => {
                 {technologies.map((tech) => {
                     return (
                         <span key={tech} className={"h-20 w-20 flex items-center justify-center"}>
-                            <GenericLogo logoId={tech} className={"h-full w-full border-1 rounded-full"}/>
+                            <GenericLogo logoId={tech} showTooltip={true} className={"h-full w-full border-1 rounded-full"}/>
                         </span>
                     )
                 })}
