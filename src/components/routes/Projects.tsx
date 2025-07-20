@@ -2,7 +2,7 @@ import type {Project} from "@/types/Project.ts";
 import Collapsible, {ClickListenerLocation} from "@/components/Collapsible.tsx";
 import {useTranslation} from "react-i18next";
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Keyboard, Zoom, Pagination} from "swiper/modules";
+import {Keyboard, Zoom, Pagination, Navigation} from "swiper/modules";
 import {cn} from "@/lib/utils.ts";
 import projects from "@/data/projects.json";
 import type {Skill} from "@/types/Skill.ts";
@@ -16,36 +16,31 @@ const renderImages = (project: Project) => {
         return <></>;
     }
 
-    const slidesPerView = 2;
-    const useLoop = (slidesPerView + 2) < (project.previewImages?.length ?? 0);
-
     return (
         <>
             <Swiper
-                modules={[Pagination, Zoom, Keyboard]}
+                modules={[Pagination, Navigation, Keyboard]}
                 pagination={
                     {
                         clickable: true,
                         dynamicBullets: false
                     }}
-                loop={useLoop}
+                loop={true}
                 spaceBetween={20}
-                slidesPerView={slidesPerView}
-                centeredSlides={true}
                 grabCursor={true}
+                navigation={true}
                 keyboard={{
                     enabled: true,
                     onlyInViewport: false
                 }}
-                zoom={true}
-                className={"w-full md:h-[60dvh] h-[100dvh]"}
+                className={"w-full h-fit"}
             >
                 {project.previewImages.map((image) => {
 
 
                     return (
                         <SwiperSlide key={image}>
-                            <div className={"flex items-center justify-center w-full h-full"}>
+                            <div className={"swiper-zoom-container"}>
                                 <img
                                     className={"object-cover object-center w-full h-full"}
                                     src={`./media/projects/${project.id}/${image}`}
