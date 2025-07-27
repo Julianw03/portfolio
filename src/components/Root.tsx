@@ -40,15 +40,15 @@ const Root = () => {
         <>
             <header className={"w-full fixed grid z-10 top-0 bg-primary-foreground overflow-hidden text-primary"}>
                 <div className={"flex h-[80px] w-full"}>
-                    {/*<div className={"ml-4 justify-center items-center h-full aspect-square hidden lg:flex"}>*/}
-                    {/*    <NavLink to={"/"} className={"overflow-hidden flex justify-center items-center h-3/5 w-3/5"}*/}
-                    {/*             tabIndex={-1}>*/}
-                    {/*        <img className={"object-cover object-center"}*/}
-                    {/*             src={"https://picsum.photos/300/300"}*/}
-                    {/*        />*/}
-                    {/*    </NavLink>*/}
-                    {/*</div>*/}
-                    <div className={"w-full h-full box-border pl-5 hidden lg:flex"}>
+                    <div className={"ml-4 justify-center items-center h-full aspect-square hidden lg:flex"}>
+                        {/*<NavLink to={"/"} className={"overflow-hidden flex justify-center items-center h-3/5 w-3/5"}*/}
+                        {/*         tabIndex={-1}>*/}
+                        {/*    <img className={"object-cover object-center"}*/}
+                        {/*         src={"https://picsum.photos/300/300"}*/}
+                        {/*    />*/}
+                        {/*</NavLink>*/}
+                    </div>
+                    <div className={"w-full h-full box-border hidden lg:flex"}>
                         {
                             Config.HEADER_LINKS.map((link) => {
                                 return (

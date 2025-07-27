@@ -45,16 +45,16 @@
     "workInProgress": true,
     "hasDisclaimer": true,
     "previewImages": [
+      "main.png",
+      "main2.png",
+      "tftLobby.png",
+      "lobby.png",
+      "readycheck.png",
+      "profile.png",
       "batchCrafting.png",
       "batchRerolling.png",
       "disenchant.png",
-      "loading.png",
-      "lobby.png",
-      "main.png",
-      "main2.png",
-      "profile.png",
-      "readycheck.png",
-      "tftLobby.png"
+      "loading.png"
     ],
     "skills": [
       "java",
