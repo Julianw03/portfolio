@@ -57,7 +57,7 @@ const Root = () => {
                                             {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                                             {/*@ts-expect-error*/}
                                             <NavLink to={link.to} tabIndex={-1} onClick={handleNavLinkClick}>
-                                                <p className={cn(!isNavigating && "cool-underline hover:scale-105", "transition-all")}
+                                                <p className={cn(!isNavigating && "cool-underline hover-scale")}
                                                    tabIndex={0}>{t(link.label, {ns: "root"})}</p>
                                             </NavLink>
                                         </div>
