@@ -188,11 +188,6 @@
     .active {
     }
 
-    .pending {
-        opacity: 0.65;
-        cursor: wait;
-    }
-
     .cool-underline {
         position: relative;
     }
@@ -230,6 +225,14 @@
         100% {
             opacity: 1;
         }
+    }
+
+    .hover-scale {
+        transition: transform 0.15s linear;
+    }
+
+    .hover-scale:hover {
+        transform: scale(1.05);
     }
 
     .svg-fill {
