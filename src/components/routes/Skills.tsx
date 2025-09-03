@@ -51,7 +51,7 @@ const Skills = () => {
                                                                             window.open(skill.linkUrl, "_blank");
                                                                         }
                                                                     }}
-                                                                    className="h-25 border-2 rounded-full box-border transition-all hover:scale-105 m-4 cursor-pointer"
+                                                                    className="lg:h-25 h-20 border-2 rounded-full box-border transition-all hover:scale-105 m-4 cursor-pointer"
                                                                 />
                                                                 <SkillDisplay
                                                                     skillName={skill.name}

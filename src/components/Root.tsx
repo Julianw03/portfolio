@@ -1,4 +1,4 @@
-import {NavLink, useNavigation} from "react-router";
+import {NavLink, Link} from "react-router";
 import {useTranslation} from "react-i18next";
 import {cn} from "@/lib/utils.ts";
 import FadeInOutlet from "@/components/FadeInOutlet.tsx";
@@ -29,13 +29,6 @@ const Root = () => {
     // Force theme load
     useTheme();
 
-    const navigation = useNavigation();
-    const isNavigating = Boolean(navigation.location);
-
-    const handleNavLinkClick = (e: MouseEvent) => {
-        if (isNavigating) e.preventDefault();
-    }
-
     return (
         <>
             <header className={"w-full fixed grid z-10 top-0 bg-primary-foreground overflow-hidden text-primary"}>
@@ -54,10 +47,8 @@ const Root = () => {
                                 return (
                                     <div key={link.to} className={"inline-flex h-full"}>
                                         <div className={"static px-4 flex justify-center items-center"}>
-                                            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                                            {/*@ts-expect-error*/}
-                                            <NavLink to={link.to} tabIndex={-1} onClick={handleNavLinkClick}>
-                                                <p className={cn(!isNavigating && "cool-underline hover-scale")}
+                                            <NavLink to={link.to} tabIndex={-1}>
+                                                <p className={cn("cool-underline hover-scale")}
                                                    tabIndex={0}>{t(link.label, {ns: "root"})}</p>
                                             </NavLink>
                                         </div>
@@ -81,11 +72,9 @@ const Root = () => {
                                     <div key={link.to} className="pl-4">
                                         <div className={"w-fit text-xl"}>
                                             <SheetClose asChild>
-                                                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                                                {/*@ts-expect-error*/}
-                                                <NavLink to={link.to} tabIndex={-1} onClick={handleNavLinkClick}>
+                                                <NavLink to={link.to} tabIndex={-1}>
                                                         <span
-                                                            className={cn(!isNavigating && "cool-underline", "transition-all")}
+                                                            className={cn("cool-underline dummy-transition")}
                                                             tabIndex={0}>{t(link.label, {ns: "root"})}</span>
                                                 </NavLink>
                                             </SheetClose>
@@ -103,7 +92,7 @@ const Root = () => {
                         className={"mx-2 w-min-1/5 justify-center items-center h-full shrink-0 hidden lg:flex"}/>
                     <LanguageSelector
                         className={"mx-2 w-min-1/5 justify-center items-center h-full shrink-0 hidden lg:flex"}/>
-                    <div className={"mr-4 flex justify-center items-center h-full aspect-square hidden lg:flex"}/>
+                    <div className={"mr-4 justify-center items-center h-full aspect-square hidden lg:flex"}/>
                 </div>
             </header>
             <main className="min-h-[100dvh] w-full bg-background pt-[80px] border-box overflow-hidden relative">
@@ -111,42 +100,43 @@ const Root = () => {
             </main>
             <footer>
                 <div
-                    className={"w-full min-h-40 flex flex-row items-center justify-evenly relative bg-primary-foreground text-primary"}>
-                    <div className={"flex flex-col items-start justify-center"}>
-                        <div className={"text-2xl mb-4"}>
-                            {t("footer.legal.title", {ns: "root"})}
+                    className={"w-full h-40 grid grid-rows-[0fr_1fr] grid-flow-col justify-around bg-primary-foreground pt-4"}>
+                    <div className={"text-2xl mb-2"}>
+                        {t("footer.legal.title", {ns: "root"})}
+                    </div>
+                    <div>
+                        <div className={"w-fit flex items-center"}>
+                                <Link to={"/imprint"} target={"_blank"}>
+                                    <p className={"cool-underline dummy-transition text-lg"}>{t("footer.legal.imprint", {ns: "root"})}</p>
+                                </Link>
                         </div>
-                        <div>
-                            <NavLink to={"/imprint"} target={"_blank"}>
-                                <p className={"cool-underline text-lg"}>{t("footer.legal.imprint", {ns: "root"})}</p>
-                            </NavLink>
-                        </div>
-                        <div>
-                            <NavLink to={`mailto:${Config.EMAIL_ADDRESS_LEGAL}`} target={"_blank"}>
-                                <p className={"cool-underline text-lg"}>{t("footer.legal.contact", {ns: "root"})}</p>
-                            </NavLink>
+                        <div className={"w-fit flex items-center"}>
+                            <Link to={`mailto:${Config.EMAIL_ADDRESS_LEGAL}`} target={"_blank"}>
+                                <p className={"cool-underline dummy-transition text-lg"}>{t("footer.legal.contact", {ns: "root"})}</p>
+                            </Link>
                         </div>
                     </div>
-                    <div className={"flex flex-col items-start justify-center h-full gap-1"}>
-                        <div className={"text-2xl mb-4"}>
-                            {t("footer.links.title", {ns: "root"})}
-                        </div>
+                    <div className={"text-2xl mb-2"}>
+                        {t("footer.links.title", {ns: "root"})}
+                    </div>
+                    <div>
                         {
                             externalLinks.map((link) => {
                                 return (
-                                    <div key={link.id} className={""}>
-                                        <NavLink to={link.url} target={"_blank"}
-                                                 className={"flex items-center gap-2  grayscale-100 hover:grayscale-0 transition-grayscale duration-250 ease-in-out cool-underline"}>
+                                    <div key={link.id}>
+                                        <div className={"flex items-center flex-row gap-2"}>
                                             <GenericLogo logoId={link.id as ID<unknown>}
                                                          className={"h-[1.125rem] w-[1.125rem]"}/>
-                                            <p className={"text-lg"}>{link.name}</p>
-                                        </NavLink>
+                                            <Link to={link.url}>
+                                                <p className={"cool-underline dummy-transition text-lg"}
+                                                   tabIndex={0}>{link.name}</p>
+                                            </Link>
+                                        </div>
                                     </div>
                                 )
                             })
                         }
                     </div>
-
                 </div>
             </footer>
             <MobileModal/>

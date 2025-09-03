@@ -42,6 +42,7 @@ const renderImages = (project: Project) => {
                         <SwiperSlide key={image}>
                             <div className={"swiper-zoom-container"}>
                                 <img
+                                    loading={"lazy"}
                                     className={"object-cover object-center w-full h-full"}
                                     src={`./media/projects/${project.id}/${image}`}
                                     alt={``}
