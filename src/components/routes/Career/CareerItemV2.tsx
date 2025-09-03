@@ -66,9 +66,8 @@ const renderResponsibilities = (data: CareerDataEntry, t: TFunction) => {
             {
                 data.responsibilities.map((responsibility, index) => {
                     return (
-                        <li key={index}>
-                            {t(`entries.${data.id}.responsibilities.${responsibility}`)}
-                        </li>
+                        <li key={index}
+                            dangerouslySetInnerHTML={{__html: t(`entries.${data.id}.responsibilities.${responsibility}`)}}></li>
                     )
                 })
             }
@@ -91,7 +90,8 @@ const renderContent = (careerData: CareerDataEntry, t: TFunction) => {
                     {
                         renderLogo(careerData)
                     }
-                    <div className={"flex-1 w-full lg:px-4 pl-2 py-2 overflow-hidden flex items-center justify-start select-text"}>
+                    <div
+                        className={"flex-1 w-full lg:px-4 pl-2 py-2 overflow-hidden flex items-center justify-start select-text"}>
                         <div className={"flex flex-col h-fit"}>
                             {
                                 renderDescription(careerData, t)
