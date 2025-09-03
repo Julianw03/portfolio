@@ -3,14 +3,18 @@
     "tu-dortmund-student": {
       "position": "Student Bachelor Computer Science",
       "responsibilities": {
-        "studying-computer-science": "Minor in Electrical Engineering"
+        "studying-computer-science": "Minor in Electrical Engineering",
+        "expected-graduation": "Expected graduation: 09.2026"
       }
     },
     "bab-technologie-working-student": {
       "position": "Working Student Software Development",
       "responsibilities": {
-        "middleware-development": "Design and development of various bidirectional middleware components for communication between external systems and the KNX bus system.",
-        "visualization-elements": "Design and development of visualization elements to display current KNX values in various formats."
+        "backend-focus": "Focus on backend development with Java 8 using an internal framework.",
+        "middleware-development": "Design, implementation, and testing of various software modules with a focus on building automation.",
+        "onboarding-others": "Onboarding of new working students.",
+        "general-responsibilities": "General tasks such as bug fixing, code reviews, documentation, and support in software quality assurance.",
+        "special-projects": "Special achievements: <ul><li><strong>Tedee Integration</strong>: Complete design and implementation including scene control; presentation at the Light + Building trade fair at the booth</li><li><strong>Sonos Integration</strong>: Redesign and architectural optimization to ensure reliable synchronization</li></ul>"
       }
     }
   },

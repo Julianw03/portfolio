@@ -1,16 +1,20 @@
 {
-  "entries" :{
+  "entries": {
     "tu-dortmund-student": {
       "position": "Student Bachelor Informatik",
       "responsibilities": {
-        "studying-computer-science": "Nebenfach Elektrotechnik"
+        "studying-computer-science": "Nebenfach Elektrotechnik",
+        "expected-graduation": "Voraussichtlicher Abschluss: 09.2026"
       }
     },
     "bab-technologie-working-student": {
       "position": "Werkstudent Softwareentwicklung",
       "responsibilities": {
-        "middleware-development": "Konzeption und Entwicklung diverser bidirektionaler Middleware-Komponenten zur Kommunikation zwischen externen Systemen und dem KNX-Bus-System.",
-        "visualization-elements": "Konzeption und Entwicklung von Visualisierungselementen zur Darstellung von aktuellen KNX-Werten in verschiedenen Darstellungsformen."
+        "backend-focus": "Schwerpunkt auf Backend-Entwicklung mit Java 8 unter Verwendung eines internen Frameworks",
+        "middleware-development": "Konzeption, Design, Implementierung und Testen verschiedener Softwaremodulen mit Fokus auf Gebäudeautomatisierung",
+        "onboarding-others": "Einarbeitung neuer Werkstudenten",
+        "general-responsibilities": "Allgemeine Aufgaben wie Bugfixing, Code-Reviews, Dokumentation und Unterstützung bei der Software-Qualitätssicherung",
+        "special-projects": "Besondere Erfolge: <ul><li><strong>Tedee Integration</strong>: Vollständige Konzeption und Implementierung inklusive Szenensteuerung; Präsentation auf der Messe Light + Building am Stand</li><li><strong>Sonos Integration</strong>: Neugestaltung und architektonische Optimierung zur Gewähleistung einer zuverlässigen Synchronization</li></ul>"
       }
     }
   },
