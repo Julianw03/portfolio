@@ -118,7 +118,7 @@ const renderDisclaimer = (project: Project, t: TFunction) => {
 const renderPlannedFeatures = (project: Project, t: TFunction) => {
     const plannedFeatures = project.plannedFeatures;
 
-    if (plannedFeatures === undefined || plannedFeatures.length === 0) {
+    if (plannedFeatures === undefined || plannedFeatures.length === 0 || !project.workInProgress) {
         return <></>;
     }
 

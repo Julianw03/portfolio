@@ -18,6 +18,7 @@ const CareerV2 = () => {
                                           careerData={careerData as unknown as CareerDataEntry}
                                           display={(index % 2 === 1) ? "left" : "right"}
                                           active={careerData.endDate === null}
+                                          collapsed={index == career.length - 1}
                                           mobileBreakpointReached={!isLgUp}
                             />
                         )

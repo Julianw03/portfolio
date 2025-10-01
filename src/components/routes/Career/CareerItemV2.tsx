@@ -10,7 +10,8 @@ export interface CareerItemV2Props {
     careerData: CareerDataEntry
     active?: boolean
     display?: "left" | "right"
-    mobileBreakpointReached?: boolean
+    mobileBreakpointReached?: boolean,
+    collapsed?: boolean
 }
 
 const renderTimelineDot = (active: boolean) => {
@@ -75,7 +76,7 @@ const renderResponsibilities = (data: CareerDataEntry, t: TFunction) => {
     )
 }
 
-const renderContent = (careerData: CareerDataEntry, t: TFunction) => {
+const renderContent = (careerData: CareerDataEntry, t: TFunction, initialCollapsed: boolean = true) => {
 
     const startDate = new Date(careerData.startDate);
     const endDate = careerData.endDate ? new Date(careerData.endDate) : null;
@@ -85,6 +86,7 @@ const renderContent = (careerData: CareerDataEntry, t: TFunction) => {
             bottomBorder={false}
             className={"w-full"}
             clickListenerLocation={ClickListenerLocation.WHOLE_HEADER}
+            initialCollapsed={initialCollapsed}
             header={
                 <div className={"h-28 w-full flex flex-row items-center"}>
                     {
@@ -124,7 +126,8 @@ const CareerItemV2 = (
         careerData,
         active = false,
         display = "left",
-        mobileBreakpointReached = false
+        mobileBreakpointReached = false,
+        collapsed = true
     }: CareerItemV2Props
 ): JSX.Element => {
 
@@ -138,7 +141,7 @@ const CareerItemV2 = (
                 }
                 <div className={"h-full w-full flex items-center justify-center bg-secondary mb-4"}>
                     {
-                        renderContent(careerData, t)
+                        renderContent(careerData, t, collapsed)
                     }
                 </div>
             </div>
@@ -150,7 +153,7 @@ const CareerItemV2 = (
             <div className={"timeline-entry"}>
                 <div className={"h-full w-full flex items-center justify-center pb-4 border-rounded-lg bg-secondary"}>
                     {
-                        renderContent(careerData, t)
+                        renderContent(careerData, t, collapsed)
                     }
                 </div>
                 {
@@ -169,7 +172,7 @@ const CareerItemV2 = (
             }
             <div className={"h-full w-full flex items-center justify-center pb-4 border-rounded-lg bg-secondary"}>
                 {
-                    renderContent(careerData, t)
+                    renderContent(careerData, t, collapsed)
                 }
             </div>
         </div>
