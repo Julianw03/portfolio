@@ -20,11 +20,12 @@
         "swaggerCodegenRiotApi": "Automatische Generierung des Riot API Clients mit Swagger Codegen",
         "noTelemetry": "Sendet keine Telemetrie-Daten an Riot Games",
         "easyApi": "Betriebsystemunabhängige API, die dir die volle Kontrolle über den Riot Client gibt",
-        "easyPasswordManager" : "Durch das Frontend im Browser kannst du wie gewohnt deinen Passwort-Manager verwenden: Kein nerviges Kopieren und Einfügen von Passwörtern mehr"
+        "easyPasswordManager" : "Durch das Frontend im Browser kannst du wie gewohnt deinen Passwort-Manager verwenden: Kein nerviges Kopieren und Einfügen von Passwörtern mehr",
+        "customLoginScreens": "Ändern von Login-Szenen"
       },
       "plannedFeatures": {
-        "customLoginScreens": "Ändern von Login-Szenen",
-        "betterFrontend": "Verbessertes Frontend mit (fast) allen Features des Riot Clients"
+        "betterFrontend": "Verbessertes Frontend statt simplem Prototypen mit mehr Funktionen",
+        "disclaimer": "Die unten gezeigten Screenshots sind aus einem frühen Prototypen und soll als Proof of Concept dienen. Das finale Design soll deutlich ansprechender werden."
       }
     },
     "poro-client": {
