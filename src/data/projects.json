@@ -8,15 +8,22 @@
       "hCaptchaProxy",
       "swaggerCodegenRiotApi",
       "browserBased",
-      "noTelemetry"
+      "noTelemetry",
+      "customLoginScreens"
     ],
     "plannedFeatures": [
-      "customLoginScreens",
-      "betterFrontend"
+      "betterFrontend",
+      "disclaimer"
     ],
     "githubLink": "https://github.com/Julianw03/RCLS",
     "workInProgress": true,
     "hasDisclaimer": true,
+    "previewImages": [
+      "prototypeChangedBg.png",
+      "prototypeLaunched.png",
+      "prototypeLoggedIn.png",
+      "swaggerExcerpt.png"
+    ],
     "skills": [
       "java",
       "spring-boot",
