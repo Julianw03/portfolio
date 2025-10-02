@@ -127,7 +127,7 @@ const Root = () => {
                                         <div className={"flex items-center flex-row gap-2"}>
                                             <GenericLogo logoId={link.id as ID<unknown>}
                                                          className={"h-[1.125rem] w-[1.125rem]"}/>
-                                            <Link to={link.url}>
+                                            <Link to={link.url} target={"_blank"}>
                                                 <p className={"cool-underline dummy-transition text-lg"}
                                                    tabIndex={0}>{link.name}</p>
                                             </Link>
