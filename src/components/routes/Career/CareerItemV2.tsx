@@ -1,13 +1,15 @@
 import {cn} from "@/lib/utils.ts";
 import type {CareerDataEntry} from "@/types/Career.ts";
-import GenericLogo from "@/components/logos/GenericLogo.tsx";
+import GenericLogo, {type Logo} from "@/components/logos/GenericLogo.tsx";
 import {useTranslation} from "react-i18next";
 import type {TFunction} from "i18next";
 import type {JSX} from "react";
-import Collapsible, {ClickListenerLocation} from "@/components/Collapsible.tsx";
+import Collapsible, {ClickListenerLocation} from "@/components/common/Collapsible.tsx";
+import {getLocalizedArray, getLocalizedContent} from "@/lib/sanity";
+import type {ID, Resolved} from "@/types/Shared.ts";
 
 export interface CareerItemV2Props {
-    careerData: CareerDataEntry
+    careerData: Resolved<CareerDataEntry>
     active?: boolean
     display?: "left" | "right"
     mobileBreakpointReached?: boolean,
@@ -37,38 +39,41 @@ const renderDateRange = (startDate: Date, endDate: Date | null, t: TFunction) =>
     return `${startDateString} - ${endDateString}`;
 }
 
-const renderLogo = (careerData: CareerDataEntry) => {
+const renderLogo = (careerData: Resolved<CareerDataEntry>) => {
     return (
         <div
             className={"flex-shrink-0 aspect-square lg:h-full h-4/5 overflow-hidden flex items-center justify-center"}>
-            <a href={careerData.linkUrl ?? ""} className={"h-full w-full"} target="_blank" rel="noopener noreferrer">
-                <GenericLogo logoId={careerData.companyLogoId ?? undefined}/>
+            <a href={careerData.company.linkUrl ?? ""} className={"h-full w-full"} target="_blank"
+               rel="noopener noreferrer">
+                <GenericLogo logoId={careerData.company.companyLogoId as ID<Logo>}/>
             </a>
         </div>
     )
 }
 
-const renderDescription = (data: CareerDataEntry, t: TFunction) => {
+const renderDescription = (data: Resolved<CareerDataEntry>, locale: string) => {
+    const position = getLocalizedContent(data.position, locale);
+
     return (
         <h3 className={"text-lg font-semibold"}>
-            {t(`entries.${data.id}.position`)}
+            {position}
         </h3>
     )
 }
 
-const renderResponsibilities = (data: CareerDataEntry, t: TFunction) => {
-
+const renderResponsibilities = (data: Resolved<CareerDataEntry>, locale: string) => {
     if (!data.responsibilities || data.responsibilities.length === 0) {
         return null;
     }
 
+    const responsibilities = getLocalizedArray(data.responsibilities, locale);
+
     return (
         <ul className={"list-disc pl-8 select-text"}>
             {
-                data.responsibilities.map((responsibility, index) => {
+                responsibilities.map((responsibility, index) => {
                     return (
-                        <li key={index}
-                            dangerouslySetInnerHTML={{__html: t(`entries.${data.id}.responsibilities.${responsibility}`)}}></li>
+                        <li key={index}>{responsibility}</li>
                     )
                 })
             }
@@ -76,7 +81,39 @@ const renderResponsibilities = (data: CareerDataEntry, t: TFunction) => {
     )
 }
 
-const renderContent = (careerData: CareerDataEntry, t: TFunction, initialCollapsed: boolean = true) => {
+const renderSpecialAchievements = (data: Resolved<CareerDataEntry>, t: TFunction, locale: string) => {
+    if (!data.special_achievements || data.special_achievements.length === 0) {
+        return null;
+    }
+
+    return (
+        <>
+            <div className={"collapsibleMarker py-1"}/>
+            <p className={"pl-2"}>
+                <b>
+                    {
+                        t("specialAchievements")
+                    }
+                </b>
+            </p>
+            <ul className={"list-disc pl-8 select-text"}>
+                {
+                    data.special_achievements.map((achievement, index) => {
+
+                        const title = getLocalizedContent(achievement.title, locale);
+                        const content = getLocalizedContent(achievement.description, locale);
+
+                        return (
+                            <li key={index}>{title}: {content}</li>
+                        )
+                    })
+                }
+            </ul>
+        </>
+    )
+}
+
+const renderContent = (careerData: Resolved<CareerDataEntry>, t: TFunction, locale: string, initialCollapsed: boolean = true) => {
 
     const startDate = new Date(careerData.startDate);
     const endDate = careerData.endDate ? new Date(careerData.endDate) : null;
@@ -96,14 +133,14 @@ const renderContent = (careerData: CareerDataEntry, t: TFunction, initialCollaps
                         className={"flex-1 w-full lg:px-4 pl-2 py-2 overflow-hidden flex items-center justify-start select-text"}>
                         <div className={"flex flex-col h-fit"}>
                             {
-                                renderDescription(careerData, t)
+                                renderDescription(careerData, locale)
                             }
                             <p className={"text-sm text-primary"}>
                                 {
-                                    careerData.company
+                                    careerData.company.name
                                 }
                             </p>
-                            <p className={"text-sm text-secondary-foreground"}>
+                            <p className={"text-sm text-primary"}>
                                 {
                                     renderDateRange(startDate, endDate, t)
                                 }
@@ -114,7 +151,12 @@ const renderContent = (careerData: CareerDataEntry, t: TFunction, initialCollaps
             }>
             <div className={cn("px-4 flex flex-col gap-4 mt-2")}>
                 {
-                    renderResponsibilities(careerData, t)
+                    renderResponsibilities(careerData, locale)
+                }
+            </div>
+            <div className={cn("px-4 flex flex-col gap-4 mt-2")}>
+                {
+                    renderSpecialAchievements(careerData, t, locale)
                 }
             </div>
         </Collapsible>
@@ -131,7 +173,8 @@ const CareerItemV2 = (
     }: CareerItemV2Props
 ): JSX.Element => {
 
-    const {t} = useTranslation("career");
+    const {t, i18n} = useTranslation("career");
+    const locale = i18n.language.split('-')[0];
 
     if (mobileBreakpointReached) {
         return (
@@ -141,7 +184,7 @@ const CareerItemV2 = (
                 }
                 <div className={"h-full w-full flex items-center justify-center bg-secondary mb-4"}>
                     {
-                        renderContent(careerData, t, collapsed)
+                        renderContent(careerData, t, locale, collapsed)
                     }
                 </div>
             </div>
@@ -153,7 +196,7 @@ const CareerItemV2 = (
             <div className={"timeline-entry"}>
                 <div className={"h-full w-full flex items-center justify-center pb-4 border-rounded-lg bg-secondary"}>
                     {
-                        renderContent(careerData, t, collapsed)
+                        renderContent(careerData, t, locale, collapsed)
                     }
                 </div>
                 {
@@ -172,7 +215,7 @@ const CareerItemV2 = (
             }
             <div className={"h-full w-full flex items-center justify-center pb-4 border-rounded-lg bg-secondary"}>
                 {
-                    renderContent(careerData, t, collapsed)
+                    renderContent(careerData, t, locale, collapsed)
                 }
             </div>
         </div>

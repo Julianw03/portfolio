@@ -27,6 +27,9 @@ jobs:
 
       - name: Build Project
         id: build
+        env:
+          VITE_SANITY_PROJECT_ID: ${{ vars.VITE_SANITY_PROJECT_ID }}
+          VITE_SANITY_DATASET: ${{ vars.VITE_SANITY_DATASET }}
         run: |
           npm run build
           echo "dist-path=dist" >> $GITHUB_OUTPUT

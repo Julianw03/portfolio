@@ -26,3 +26,5 @@ dist-ssr
 # npm
 /dist
 /node_modules
+
+.env

@@ -1,15 +1,15 @@
 import {StrictMode} from 'react'
 import {createRoot} from 'react-dom/client'
 import './index.css'
-import { createHashRouter, RouterProvider} from "react-router";
+import {createHashRouter, RouterProvider} from "react-router";
 import Root from "./components/Root.tsx";
 import './i18n';
-import Home from "@/components/routes/Home.tsx";
+import Home, {loader as HomeLoader} from "@/components/routes/Home.tsx";
 import NotFound from "@/components/routes/NotFound.tsx";
-import Skills from "@/components/routes/Skills.tsx";
+import Skills, {loader as SkillsLoader} from "@/components/routes/Skills.tsx";
 import Imprint from "@/components/Imprint.tsx";
-import Projects from "@/components/routes/Projects.tsx";
-import CareerV2 from "@/components/routes/CareerV2.tsx";
+import Projects, {loader as ProjectsLoader} from "@/components/routes/Projects.tsx";
+import CareerV2, {loader as CareerV2Loader} from "@/components/routes/CareerV2.tsx";
 
 const router = createHashRouter([
     {
@@ -19,19 +19,23 @@ const router = createHashRouter([
         children: [
             {
                 index: true,
-                Component: Home
+                Component: Home,
+                loader: HomeLoader,
             },
             {
                 path: "/skills",
-                Component: Skills
+                Component: Skills,
+                loader: SkillsLoader
             },
             {
                 path: "/projects",
-                Component: Projects
+                Component: Projects,
+                loader: ProjectsLoader
             },
             {
                 path: "/career",
-                Component: CareerV2
+                Component: CareerV2,
+                loader: CareerV2Loader
             },
             // {
             //     path:  "/about",
