@@ -1,6 +1,7 @@
 export default {
     name: 'locale_text',
     type: 'object',
+    title: 'Locale Text',
     fields: [
         {
             name: 'key',
@@ -28,7 +29,7 @@ export default {
             key: 'key.current',
         },
         prepare(selection: any) {
-            const { en, de, key } = selection;
+            const {de, key} = selection;
             return {
                 title: key,
                 subtitle: de ? `DE: ${de}` : undefined,

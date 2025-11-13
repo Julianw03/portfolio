@@ -1,6 +1,7 @@
 export default {
     name: 'special_achievement',
     type: 'object',
+    title: 'Special Achievement',
     fields: [
         {
             name: 'title',
