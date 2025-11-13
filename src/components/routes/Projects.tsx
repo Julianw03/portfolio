@@ -14,7 +14,7 @@ import {Await, useLoaderData} from "react-router";
 import DefaultFallbackWrapper from "@/components/DefaultFallbackWrapper.tsx";
 import {Suspense} from "react";
 
-const PROJECTS_QUERY = `*[_type == "project"] | order(order asc) {
+const PROJECTS_QUERY = `*[_type == "project"] | order(order desc) {
   "id": id.current,
   title,
   description,
@@ -190,61 +190,60 @@ const Projects = () => {
                             </p>
                             <div className={"w-full flex flex-col mt-4"}>
                                 {
-                                    data.sort((a, b) => b.order - a.order)
-                                        .map((project: Project, index: number) => {
-                                            const title = project.title;
-                                            const description = getLocalizedContent(project.description, locale);
-                                            const disclaimer = getLocalizedContent(project.disclaimer, locale);
-                                            const features = getLocalizedArray(project.features, locale);
-                                            const plannedFeatures = getLocalizedArray(project.plannedFeatures, locale);
+                                    data.map((project: Project, index: number) => {
+                                        const title = project.title;
+                                        const description = getLocalizedContent(project.description, locale);
+                                        const disclaimer = getLocalizedContent(project.disclaimer, locale);
+                                        const features = getLocalizedArray(project.features, locale);
+                                        const plannedFeatures = getLocalizedArray(project.plannedFeatures, locale);
 
-                                            return (
-                                                <Collapsible
-                                                    key={project.id}
-                                                    initialCollapsed={index > 0}
-                                                    className={"w-full"}
-                                                    clickListenerLocation={ClickListenerLocation.WHOLE_HEADER}
-                                                    header={
-                                                        <div className={"mb-2"}>
-                                                            <a className={cn("text-2xl", project.githubLink ? "external-link" : "")}
-                                                               href={project.githubLink} target={"_blank"}
-                                                               rel="noopener noreferrer">
-                                                                {title} {project.status === ProjectStatus.WORK_IN_PROGRESS ?
-                                                                <span
-                                                                    className={"text-muted-foreground"}>({t("keys.workInProgress")})</span> : ""}
-                                                            </a>
-                                                        </div>
-                                                    }
-                                                >
-                                                    {description && (
-                                                        <div className={"mb-4"}>
-                                                            {description}
-                                                        </div>
-                                                    )}
-                                                    {disclaimer && (
-                                                        <div className={"mb-4"}>
-                                                            {renderDisclaimer(disclaimer)}
-                                                        </div>
-                                                    )}
-                                                    {features.length > 0 && (
-                                                        <div className={"mb-4"}>
-                                                            {renderFeatures(features, t)}
-                                                        </div>
-                                                    )}
-                                                    {plannedFeatures.length > 0 && (
-                                                        <div className={"mb-4"}>
-                                                            {renderPlannedFeatures(plannedFeatures, project.status === ProjectStatus.WORK_IN_PROGRESS, t)}
-                                                        </div>
-                                                    )}
-                                                    <div className={"mb-6"}>
-                                                        {renderImages(project)}
+                                        return (
+                                            <Collapsible
+                                                key={project.id}
+                                                initialCollapsed={index > 0}
+                                                className={"w-full"}
+                                                clickListenerLocation={ClickListenerLocation.WHOLE_HEADER}
+                                                header={
+                                                    <div className={"mb-2"}>
+                                                        <a className={cn("text-2xl", project.githubLink ? "external-link" : "")}
+                                                           href={project.githubLink} target={"_blank"}
+                                                           rel="noopener noreferrer">
+                                                            {title} {project.status === ProjectStatus.WORK_IN_PROGRESS ?
+                                                            <span
+                                                                className={"text-muted-foreground"}>({t("keys.workInProgress")})</span> : ""}
+                                                        </a>
                                                     </div>
+                                                }
+                                            >
+                                                {description && (
                                                     <div className={"mb-4"}>
-                                                        {renderSkills(project.skills)}
+                                                        {description}
                                                     </div>
-                                                </Collapsible>
-                                            )
-                                        })}
+                                                )}
+                                                {disclaimer && (
+                                                    <div className={"mb-4"}>
+                                                        {renderDisclaimer(disclaimer)}
+                                                    </div>
+                                                )}
+                                                {features.length > 0 && (
+                                                    <div className={"mb-4"}>
+                                                        {renderFeatures(features, t)}
+                                                    </div>
+                                                )}
+                                                {plannedFeatures.length > 0 && (
+                                                    <div className={"mb-4"}>
+                                                        {renderPlannedFeatures(plannedFeatures, project.status === ProjectStatus.WORK_IN_PROGRESS, t)}
+                                                    </div>
+                                                )}
+                                                <div className={"mb-6"}>
+                                                    {renderImages(project)}
+                                                </div>
+                                                <div className={"mb-4"}>
+                                                    {renderSkills(project.skills)}
+                                                </div>
+                                            </Collapsible>
+                                        )
+                                    })}
                             </div>
                         </div>
                     </div>

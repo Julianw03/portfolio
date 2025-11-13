@@ -20,8 +20,7 @@ export default {
             name: 'companyLogoId',
             title: 'Company Logo Id',
             type: 'string',
-            description: 'Reference to logo in LogoProvider',
-            validation: (Rule: any) => Rule.optional()
+            description: 'Reference to logo in LogoProvider'
         },
         {
             name: 'linkUrl',
@@ -35,8 +34,7 @@ export default {
             name: 'shortDescription',
             title: 'Description',
             type: 'locale_text',
-            description: 'Short description of the company.',
-            validation: (Rule: any) => Rule.optional()
+            description: 'Short description of the company.'
         }
     ]
 }

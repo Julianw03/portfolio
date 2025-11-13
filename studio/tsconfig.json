@@ -6,7 +6,7 @@
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "Preserve",
+    "module": "preserve",
     "moduleDetection": "force",
     "isolatedModules": true,
     "jsx": "preserve",

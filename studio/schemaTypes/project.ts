@@ -20,8 +20,8 @@ export default {
             title: 'Description',
             type: 'object',
             fields: [
-                { name: 'en', title: 'English', type: 'text' },
-                { name: 'de', title: 'German', type: 'text' },
+                {name: 'en', title: 'English', type: 'text'},
+                {name: 'de', title: 'German', type: 'text'},
             ],
         },
         {
@@ -30,9 +30,9 @@ export default {
             type: 'string',
             options: {
                 list: [
-                    { 'title': 'Work in Progress', value: 'wip' },
-                    { 'title': 'Archived', value: 'archived' },
-                    { 'title': 'Completed', value: 'completed' }
+                    {'title': 'Work in Progress', value: 'wip'},
+                    {'title': 'Archived', value: 'archived'},
+                    {'title': 'Completed', value: 'completed'}
                 ]
             },
             initialValue: 'wip',
@@ -46,9 +46,9 @@ export default {
                 {
                     type: 'object',
                     fields: [
-                        { name: 'key', title: 'Key', type: 'string' },
-                        { name: 'en', title: 'English', type: 'text' },
-                        { name: 'de', title: 'German', type: 'text' },
+                        {name: 'key', title: 'Key', type: 'string'},
+                        {name: 'en', title: 'English', type: 'text'},
+                        {name: 'de', title: 'German', type: 'text'},
                     ],
                 },
             ],
@@ -61,19 +61,19 @@ export default {
                 {
                     type: 'object',
                     fields: [
-                        { name: 'key', title: 'Key', type: 'string' },
-                        { name: 'en', title: 'English', type: 'text' },
-                        { name: 'de', title: 'German', type: 'text' },
+                        {name: 'key', title: 'Key', type: 'string'},
+                        {name: 'en', title: 'English', type: 'text'},
+                        {name: 'de', title: 'German', type: 'text'},
                     ],
                 },
             ],
-            hidden: ({ parent }: any) => !(parent?.status === 'wip')
+            hidden: ({parent}: any) => !(parent?.status === 'wip')
         },
         {
             name: 'skills',
             title: 'Technologies Used',
             type: 'array',
-            of: [{ type: 'reference', to: [{ type: 'skill' }] }],
+            of: [{type: 'reference', to: [{type: 'skill'}]}],
         },
         {
             name: 'hasDisclaimer',
@@ -86,10 +86,10 @@ export default {
             title: 'Disclaimer',
             type: 'object',
             fields: [
-                { name: 'en', title: 'English', type: 'text' },
-                { name: 'de', title: 'German', type: 'text' },
+                {name: 'en', title: 'English', type: 'text'},
+                {name: 'de', title: 'German', type: 'text'},
             ],
-            hidden: ({ parent }: any) => !parent?.hasDisclaimer,
+            hidden: ({parent}: any) => !parent?.hasDisclaimer,
         },
         {
             name: 'githubLink',
@@ -103,7 +103,7 @@ export default {
             of: [
                 {
                     type: 'image',
-                    options: { hotspot: true },
+                    options: {hotspot: true},
                     fields: [
                         {
                             name: 'alt',
@@ -127,16 +127,17 @@ export default {
             status: 'status',
         },
         prepare(selection: any) {
-            const { title, media, status } = selection;
+            const {title, media, status} = selection;
 
-            const statusToPostfix = {
+            type ProjectStatus = "wip" | "archived" | "completed";
+
+            const statusToPostfix: Record<ProjectStatus, string> = {
                 "wip": "WIP",
                 "archived": "Archived",
                 "completed": "Completed",
             }
 
-            // @ts-ignore
-            const statusString = statusToPostfix[status] ?? "Unknown";
+            const statusString = statusToPostfix[status as ProjectStatus] ?? "Unknown";
 
             return {
                 title: title,
