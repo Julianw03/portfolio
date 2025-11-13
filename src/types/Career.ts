@@ -1,11 +1,17 @@
-import type {ExternalLink, ID, ISO8601Date, LanguageKey} from "@/types/Shared.ts";
+import type {ID, LocalizedString, LocalizedText, Reference} from "@/types/Shared.ts";
+import type {Company} from "@/types/Company.ts";
+
+export interface SpecialAchievement {
+    title: LocalizedString;
+    description: LocalizedText;
+}
 
 export interface CareerDataEntry {
     id: ID<CareerDataEntry>;
-    company: string;
-    companyLogoId: ID<unknown> | null
-    linkUrl?: ExternalLink | null
-    startDate: ISO8601Date
-    endDate?: ISO8601Date | null
-    responsibilities: LanguageKey<unknown>[];
+    position: LocalizedString;
+    company: Reference<Company>;
+    startDate: string;
+    endDate?: string | null;
+    responsibilities?: Array<LocalizedText>;
+    special_achievements?: Array<SpecialAchievement>;
 }

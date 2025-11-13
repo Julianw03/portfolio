@@ -20,6 +20,7 @@ import BABTechnologieLogo from "@/components/logos/work/BABTechnologieLogo.tsx";
 import EmailIcon from "@/components/logos/generic/EmailLogo.tsx";
 import TUDortmundLogo from "@/components/logos/work/TUDortmundLogo.tsx";
 import CppLogo from "@/components/logos/skills/CppLogo.tsx";
+import SanityLogo from "@/components/logos/skills/SanityLogo.tsx";
 
 export class LogoProvider {
     private static instance: LogoProvider;
@@ -69,6 +70,8 @@ export class LogoProvider {
 
         this.register("tu-dortmund", TUDortmundLogo);
         this.register("bab-technologie", BABTechnologieLogo)
+
+        this.register("sanity", SanityLogo)
     }
 
     public getLogo: (id: ID<unknown> | null | undefined) => Logo | undefined = (id) => {
