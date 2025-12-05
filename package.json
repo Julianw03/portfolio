@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build --mode production",
+    "postbuild": "cpx CNAME dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "homepage": "https://julianw03.github.io/portfolio",
+  "homepage": "https://portfolio.juliaw03.dev",
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.1.14",
     "@radix-ui/react-avatar": "^1.1.10",
@@ -22,6 +23,7 @@
     "@tailwindcss/vite": "^4.1.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cpx2": "^8.0.0",
     "framer-motion": "^12.16.0",
     "i18next": "^25.2.1",
     "i18next-browser-languagedetector": "^8.1.0",
