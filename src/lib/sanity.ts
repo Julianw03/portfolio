@@ -1,6 +1,4 @@
-import { createClient } from '@sanity/client';
-import imageUrlBuilder from '@sanity/image-url';
-import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import {createClient} from '@sanity/client';
 
 export const sanityClient = createClient({
     projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
@@ -8,12 +6,6 @@ export const sanityClient = createClient({
     useCdn: true,
     apiVersion: '2025-01-01',
 });
-
-const builder = imageUrlBuilder(sanityClient);
-
-export function urlFor(source: SanityImageSource) {
-    return builder.image(source);
-}
 
 export function getSanityData<T>(query: string): Promise<T> {
     return sanityClient.fetch<T>(query);
@@ -28,7 +20,7 @@ export function getLocalizedContent<T>(
 }
 
 export function getLocalizedArray<T>(
-    items: Array<{en?: T; de?: T}> | undefined | null,
+    items: Array<{ en?: T; de?: T }> | undefined | null,
     locale: string = 'en'
 ): T[] {
     if (!items || !Array.isArray(items)) return [];
@@ -36,18 +28,4 @@ export function getLocalizedArray<T>(
     return items
         .map(item => getLocalizedContent(item, locale))
         .filter((text): text is T => text !== undefined);
-}
-
-export function getImageUrl(image: any): string {
-    if (!image) return '';
-
-    if (image.imageType === 'local') {
-        return `${import.meta.env.BASE_URL}${image.localPath}`;
-    }
-
-    if (image.imageType === 'sanity' && image.sanityImage) {
-        return urlFor(image.sanityImage).url();
-    }
-
-    return '';
 }
