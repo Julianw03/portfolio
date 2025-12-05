@@ -5,17 +5,16 @@ import {nodePolyfills} from "vite-plugin-node-polyfills";
 import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
-export default defineConfig(({mode}) => ({
-        base: mode === 'production' ? '/portfolio/' : '/',
-        plugins: [
-            react(),
-            nodePolyfills(),
-            tailwindcss()
-        ],
-        resolve: {
-            alias: {
-                "@": path.resolve(__dirname, "./src"),
-            },
+export default defineConfig({
+    base: '/',
+    plugins: [
+        react(),
+        nodePolyfills(),
+        tailwindcss()
+    ],
+    resolve: {
+        alias: {
+            "@": path.resolve(__dirname, "./src"),
         },
-    })
-)
+    },
+});
