@@ -9,13 +9,24 @@ export interface SimpleLink {
     label: string
 }
 
-export const HEADER_LINKS: SimpleLink[] = [
-    {to: "/", label: "nav.home"},
-    {to: "/skills", label: "nav.skills"},
-    {to: "/career", label: "nav.career"},
-    {to: "/projects", label: "nav.projects"},
-    // {to: "/about", label: "nav.about"}
-];
+export const HEADER_LINKS = {
+    "HOME": {
+        to: "/",
+        label: "nav.home"
+    },
+    "SKILLS": {
+        to: "/skills",
+        label: "nav.skills"
+    },
+    "CAREER": {
+        to: "/career",
+        label: "nav.career"
+    },
+    "PROJECTS": {
+        to: "/projects",
+        label: "nav.projects"
+    }
+}
 
 export interface SupportedLanguage {
     code: string

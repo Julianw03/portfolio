@@ -21,6 +21,7 @@ import EmailIcon from "@/components/logos/generic/EmailLogo.tsx";
 import TUDortmundLogo from "@/components/logos/work/TUDortmundLogo.tsx";
 import CppLogo from "@/components/logos/skills/CppLogo.tsx";
 import SanityLogo from "@/components/logos/skills/SanityLogo.tsx";
+import NestJSLogo from "@/components/logos/skills/NestJSLogo.tsx";
 
 export class LogoProvider {
     private static instance: LogoProvider;
@@ -33,6 +34,7 @@ export class LogoProvider {
     }
 
     private readonly map;
+
     private register(id: string, logo: Logo) {
         if (this.map.has(id)) {
             throw new Error(`Logo with id ${id} is already registered.`);
@@ -55,6 +57,7 @@ export class LogoProvider {
         this.register("react", ReactLogo);
         this.register("redux", ReduxLogo);
         this.register("tailwindcss", TailwindCssLogo);
+        this.register("nest-js", NestJSLogo)
         this.register("spring-boot", SpringBootLogo);
 
         this.register("git", GitLogo);

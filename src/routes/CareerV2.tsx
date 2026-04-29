@@ -1,5 +1,5 @@
 import useCssBreakpointOrUp, {Breakpoint} from "@/hooks/useCssBreakpointOrUp.tsx";
-import CareerItemV2 from "@/components/routes/Career/CareerItemV2.tsx";
+import CareerItemV2 from "@/routes/Career/CareerItemV2.tsx";
 import {getSanityData} from "@/lib/sanity.ts";
 import type {CareerDataEntry} from "@/types/Career.ts";
 import {Await, useLoaderData} from "react-router";
