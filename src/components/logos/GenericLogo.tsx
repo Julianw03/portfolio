@@ -1,7 +1,7 @@
 import type {ReactNode} from "react";
 import {cn} from "@/lib/utils.ts";
 import type {ID} from "@/types/Shared.ts";
-import {Tooltip, TooltipTrigger, TooltipContent} from "@/components/ui/tooltip.tsx";
+import {Tooltip, TooltipContent, TooltipTrigger} from "@/components/ui/tooltip.tsx";
 import {LogoProvider} from "@/systems/LogoProvider.ts";
 
 
