@@ -37,7 +37,7 @@ const Header = () => {
                 </div>
                 <div className={"w-full h-full box-border hidden lg:flex"}>
                     {
-                        Config.HEADER_LINKS.map((link) => {
+                        Object.values(Config.HEADER_LINKS).map((link) => {
                             return (
                                 <div key={link.to} className={"inline-flex h-full"}>
                                     <div className={"static px-4 flex justify-center items-center"}>
@@ -64,7 +64,7 @@ const Header = () => {
                                     {t("nav.title", {ns: "root"})}
                                 </SheetTitle>
                             </SheetHeader>
-                            {Config.HEADER_LINKS.map((link) => (
+                            {Object.values(Config.HEADER_LINKS).map((link) => (
                                 <div key={link.to} className="pl-4">
                                     <div className={"w-fit text-xl"}>
                                         <SheetClose asChild>

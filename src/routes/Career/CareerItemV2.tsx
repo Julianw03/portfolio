@@ -61,7 +61,7 @@ const renderDescription = (data: Resolved<CareerDataEntry>, locale: string) => {
     )
 }
 
-const renderResponsibilities = (data: Resolved<CareerDataEntry>, locale: string) => {
+const renderResponsibilities = (data: Resolved<CareerDataEntry>, t: TFunction, locale: string) => {
     if (!data.responsibilities || data.responsibilities.length === 0) {
         return null;
     }
@@ -69,15 +69,24 @@ const renderResponsibilities = (data: Resolved<CareerDataEntry>, locale: string)
     const responsibilities = getLocalizedArray(data.responsibilities, locale);
 
     return (
-        <ul className={"list-disc pl-8 select-text"}>
-            {
-                responsibilities.map((responsibility, index) => {
-                    return (
-                        <li key={index}>{responsibility}</li>
-                    )
-                })
-            }
-        </ul>
+        <>
+            <p className={"pl-2"}>
+                <b>
+                    {
+                        t("responsibilities")
+                    }
+                </b>
+            </p>
+            <ul className={"list-disc pl-8 select-text"}>
+                {
+                    responsibilities.map((responsibility, index) => {
+                        return (
+                            <li key={index}>{responsibility}</li>
+                        )
+                    })
+                }
+            </ul>
+        </>
     )
 }
 
@@ -88,7 +97,6 @@ const renderSpecialAchievements = (data: Resolved<CareerDataEntry>, t: TFunction
 
     return (
         <>
-            <div className={"collapsibleMarker py-1"}/>
             <p className={"pl-2"}>
                 <b>
                     {
@@ -151,12 +159,13 @@ const renderContent = (careerData: Resolved<CareerDataEntry>, t: TFunction, loca
             }>
             <div className={cn("px-4 flex flex-col gap-4 mt-2")}>
                 {
-                    renderResponsibilities(careerData, locale)
+                    renderSpecialAchievements(careerData, t, locale)
                 }
             </div>
             <div className={cn("px-4 flex flex-col gap-4 mt-2")}>
+                <div className={"collapsibleMarker py-1"}/>
                 {
-                    renderSpecialAchievements(careerData, t, locale)
+                    renderResponsibilities(careerData, t, locale)
                 }
             </div>
         </Collapsible>
